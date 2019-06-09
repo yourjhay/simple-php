@@ -1,0 +1,15 @@
+{
+    "name": "simplephp/simplephp",
+    "description": "The Simple PHP Framework.",
+    "keywords": ["framework", "simplephp"],
+    "require": {
+        "twig/twig": "^2.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Simple\\": "simple",
+            "App\\": "App/"
+        }
+    }
+}

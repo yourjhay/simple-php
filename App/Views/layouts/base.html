@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}{%endblock%}</title>
+</head>
+<style>
+    body {
+        color: #76787a;
+    }
+    .header{
+        font-size: 60px;
+        width:auto;
+        text-align:center;
+        margin-top:20%;
+        font-weight: bold;
+    }
+    .text {
+        text-align: center;
+        font-size:30px;
+    }
+    footer{
+        text-align:center;
+    }
+</style>
+<body>
+    <nav>
+        <a href="/">Home</a> | 
+        <a href="/users">Users</a> |
+        <a href="/about">about</a> 
+    </nav>
+   {% block body %}
+   {% endblock %}
+</body>
+</html>
