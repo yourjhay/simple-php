@@ -21,7 +21,14 @@ Via Git:
 ```
 git clone https://gitlab.com/jhayann/simple.git
 ```
-Via Composer: 
+Then run these 2 commands
+```
+cd simple-php
+
+composer install
+```
+
+Via Composer: (recommended) 
 ```
 composer create-project reyjhon/simple-php
 ```
