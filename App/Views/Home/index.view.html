@@ -1,11 +1,11 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} The "PHP Simple Framework" {% endblock %}
+{% block title %} {{name}} {% endblock %}
 
 {% block body %}
-<div class="header">WELCOME {{ name }}</div>
-<p class="text"><em>The "PHP Simple Framework"</em></p>
+<div class="header">{{ name }}</div>
+<p class="text"><em>{{ description }}</em></p>
 <footer>
-   <strong>@reyjhonbaquirin</strong>
+   <strong><a target="_blank" href="https://github.com/jhayann/simple-php">https://github.com/jhayann/simple-php</a></strong>
 </footer>
 {% endblock %}

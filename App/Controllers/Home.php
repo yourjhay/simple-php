@@ -20,7 +20,8 @@ class Home extends SimpleController {
          * use view::renderNormal('viewname',array())
          */
         view::render('home.index',[
-            'name' => "reyjhon"
+            'name'        => APP_NAME,
+            'description' => APP_DESCRIPTION
         ]);
 
     }
