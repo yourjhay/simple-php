@@ -2,7 +2,7 @@
 
 /*----------------------------------------------------------------
 |
-| The Simple PHP Framework
+| The Simple PHP Framework v1.0
 | @reyjhonbaquirin
 | *** BASE ROUTER Class ***
 ------------------------------------------------------------------*/
@@ -82,7 +82,6 @@ class Router {
      * Dispatch route parameter to URL
      * 
      */
-
     public static function dispatch($url) {
         $url = self::removeQueryString($url);
         if(self::match($url)) {
@@ -97,19 +96,13 @@ class Router {
                if(is_callable([$controller_object, $action])){
                    $controller_object->$action();
                } else {
-
-                  throw new \Exception("Method [$action] (in Controller [$controller] ) not found");
-                  
+                  throw new \Exception("Method [$action] (in Controller [$controller] ) not found");              
                 }
            } else {
-
                throw new \Exception("Controller class [$controller] not found");
-
            }
         } else {
-
             throw new \Exception("INVALID ROUTE [$url]", 404);
-
         }
     }
 
@@ -117,7 +110,6 @@ class Router {
      * convert string into Studly Case format 
      * @var string
      */
-
      private static function convertToStudlyCaps($string) {
         return str_replace(' ','',ucwords(str_replace('-',' ', $string)));
      }
@@ -126,11 +118,15 @@ class Router {
      * convert string into Camel Case format 
      * @var string
      */
-
     private static function convertToCamelCase($string) {
         return lcfirst(self::convertToStudlyCaps($string));
      }
 
+     /**
+      * Remove query string from url like:
+      * ?page=1&id=1...... etc.
+      * @param string $url
+      */
      protected static function removeQueryString($url) {
          if($url != ''){
              $parts = explode('&', $url, 2);
@@ -143,6 +139,10 @@ class Router {
          return $url;
      }
 
+     /**
+      * Getnamespace in route params to specify where it has to be called 
+      * @return string $namespace
+      */
      protected static function getNamespace() {
         $namespace = 'App\Controllers\\';
         if(array_key_exists('namespace', self::$params)){

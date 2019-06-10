@@ -2,7 +2,7 @@
 
 /*----------------------------------------------------------------
 |
-| The Simple PHP Framework
+| The Simple PHP Framework v 1.0
 | @reyjhonbaquirin
 | *** BASE CONTROLLER Class ***
 ------------------------------------------------------------------*/

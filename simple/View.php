@@ -2,7 +2,7 @@
 
 /*----------------------------------------------------------------
 |
-| The Simple PHP Framework
+| The Simple PHP Framework v1.0
 | @reyjhonbaquirin
 | *** VIEW Class ***
 ------------------------------------------------------------------*/
@@ -13,6 +13,7 @@ class View {
     /**
      * Render A view 
      * @param string $view - The file my dear
+     * @param array $args - Data to be pass in the view
      * @return void
      */
     public static function renderNormal($view, $args = []) {
@@ -34,13 +35,19 @@ class View {
         foreach($paths as $path){
             $file .= '/'.$path;
         }
-      if($html==true){
-        return $file.'.view.html';
-      } else {
-        return $file.'.view.php';
-      }
+        if($html==true){
+            return $file.'.view.html';
+        } else {
+            return $file.'.view.php';
+        }
     }
 
+    /**
+     * Render A view using a template Engine
+     * @param string $template - View name
+     * @param array $args - Data to be pass in the view
+     * @return void
+     */
     public static function render($template, $args = []){
         static $twig = null;
         $view = self::create($template, true);

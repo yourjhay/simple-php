@@ -24,7 +24,7 @@ class Users extends SimpleController {
         echo "hello from the show action of Post Controller";
     }
 
-    public function editPost() {
+    public function show() {
         echo "hello from the editPost action of Post Controller<br><br>";
         echo 'Parameter from route: <pre>'.htmlspecialchars(print_r(self::$route_params, true)).'<pre>';
     }

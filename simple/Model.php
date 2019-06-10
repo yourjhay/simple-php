@@ -1,7 +1,7 @@
 <?php
 /*----------------------------------------------------------------
 |
-| The Simple PHP Framework
+| The Simple PHP Framework v1.0
 | @reyjhonbaquirin
 | *** BASE MODEL Class ***
 ------------------------------------------------------------------*/
