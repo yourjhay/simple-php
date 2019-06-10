@@ -21,9 +21,9 @@ Via Git:
 ```
 git clone https://gitlab.com/jhayann/simple.git
 ```
-Via Composer: (not yet available)
+Via Composer: 
 ```
-composer create-project simple/simple Web
+composer create-project reyjhon/simple-php
 ```
 
 # Using the Simple Framework
