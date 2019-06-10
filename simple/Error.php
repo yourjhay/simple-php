@@ -74,6 +74,9 @@ class Error {
             </div>
             ';
         } else {
+            if (!file_exists(dirname(__DIR__) . '/Logs')) {
+                mkdir(dirname(__DIR__) . '/Logs/', 0777, true);
+            }
             $log = dirname(__DIR__) . '/Logs/' . date('Y-m-d') . '.txt';
             ini_set('error_log', $log);
             $m = 'Uncaught exception: [' .get_class($exception).']';
