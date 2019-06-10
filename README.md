@@ -21,10 +21,18 @@ Via Git:
 ```
 git clone https://gitlab.com/jhayann/simple.git
 ```
-Via Composer: 
+Then run this 2 commands:
+```
+cd simple-php
+
+composer install
+```
+
+Via Composer: (recommended) 
 ```
 composer create-project reyjhon/simple-php
 ```
+
 # Serving Simple-PHP
 PHP-simple doesn't need a real web server to run when in development.
 
@@ -116,9 +124,9 @@ Passing Parameters from url to the router. Eg. id,name,prodct etc.
 Router::set('{controller:users}/{action:show}/{id:\w+}',[
 ```
 
-on variable id. to be able to accept letters and numbers, you need to set the regex(regular expression).
+on the variable id, to be able to accept letters and numbers, you need to set the regex(regular expression).
 
-BY default it varible only accepts letters.
+BY default variable only accepts letters.
 
 example: 
 ```php
@@ -130,8 +138,7 @@ example:
 - **\bSHOW|\bEDIT|\bUPDATE** accepts _show_, _edit_ and _update_ (case insensitive).
 - You can set your own regex.
 
-
-
+## Documentation will be updated soon... 
 
 
 
