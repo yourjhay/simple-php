@@ -93,10 +93,10 @@ class Router {
                $action = self::$params['action'];
                $action = self::convertToCamelCase($action);
               
-               if(is_callable([$controller_object, $action])){
+               if (preg_match('/action$/i', $action) == 0) {
                    $controller_object->$action();
                } else {
-                  throw new \Exception("Method [$action] (in Controller [$controller] ) not found");              
+                  throw new \Exception("Method [$action] (in Controller [$controller] ) can't be called explicitly. Remove Action suffix instead");              
                 }
            } else {
                throw new \Exception("Controller class [$controller] not found");
