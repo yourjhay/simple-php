@@ -25,7 +25,7 @@ Then run this 2 commands:
 ```
 cd simple-php
 
-composer install
+composer update
 ```
 
 Via Composer: (recommended) 
