@@ -55,7 +55,7 @@ class View {
             $loader = new \Twig\Loader\FilesystemLoader('../App/Views');
             if(twigcache == true){
                 $twig = new \Twig\Environment($loader, [
-                    'cache' => './Cache/Views',
+                    'cache' => '../simple/Cache/Views',
                 ]);
             } else {        
                 $twig = new \Twig\Environment($loader);                        
