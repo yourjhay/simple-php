@@ -19,7 +19,7 @@ class View {
     public static function renderNormal($view, $args = []) {
         extract($args, EXTR_SKIP);
         $view = self::create($view);
-        $file = "../App/Views/$view";
+        $file = dirname(__DIR__)."/App/Views/$view";
         if(is_readable($file)){
             require $file;
         } else {
