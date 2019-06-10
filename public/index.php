@@ -7,6 +7,7 @@
 |
 | *** FRONT CONTROLLER ***
 ------------------------------------------------------------------*/
+$url = $_SERVER['SERVER_NAME']=="localhost" ? substr($_SERVER['REQUEST_URI'],1) : $_SERVER['QUERY_STRING'];
 
 /**
  * Application Configs
@@ -32,6 +33,5 @@ set_exception_handler('Simple\Error::exceptionHandler');
  * Application routes
  */
 require '../App/Routes.php';
-$url = $_SERVER['QUERY_STRING'];
 use Simple\Router;
 Router::dispatch($url);
