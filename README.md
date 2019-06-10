@@ -25,6 +25,14 @@ Via Composer:
 ```
 composer create-project reyjhon/simple-php
 ```
+# Serving Simple-PHP
+PHP-simple doesn't need a real web server to run when in development.
+
+**NOTE: YOU MUST BE IN /public directory of your project** then run the following command:
+```
+php -S localhost:8000
+```
+then you can now navigate _localhost:8000_ to to your browser. Awesome!
 
 # Using the Simple Framework
 
