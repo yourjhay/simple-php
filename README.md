@@ -21,7 +21,7 @@ Via Git:
 ```
 git clone https://gitlab.com/jhayann/simple.git
 ```
-Then run these 2 commands
+Then run this 2 commands:
 ```
 cd simple-php
 
@@ -32,6 +32,7 @@ Via Composer: (recommended)
 ```
 composer create-project reyjhon/simple-php
 ```
+
 # Serving Simple-PHP
 PHP-simple doesn't need a real web server to run when in development.
 
