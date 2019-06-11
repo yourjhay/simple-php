@@ -26,8 +26,14 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
  * Error Reporting
  */
 error_reporting(E_ALL);
-set_error_handler('Simple\Error::errorHandler');
-set_exception_handler('Simple\Error::exceptionHandler');
+if(ERROR_HANDLER === 'simply') {
+    set_error_handler('Simple\Error::errorHandler');
+    set_exception_handler('Simple\Error::exceptionHandler');
+} elseif (ERROR_HANDLER === 'whoops') {
+    $whoops = new \Whoops\Run;
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->register();
+}
 
 /**
  * Application routes
