@@ -13,10 +13,15 @@
         }
     ],
     "require": {
-        "twig/twig": "^2.0",
+        "eftec/bladeone": "3.29",
         "latitude/latitude": "^3.3"
     },
-
+    "suggest": {
+        "intervention/image": "To handle Image processing in this micro framework",
+        "phpmailer/phpmailer": "For handling emails and provide extensible features",
+        "filp/whoops": "Install this to have a pretty page for error like laravel",
+        "wixel/gump": "For validations, You can try gump. https://github.com/Wixel/GUMP"
+    },
     "autoload": {
         "files": [
             "simple/functions.php"

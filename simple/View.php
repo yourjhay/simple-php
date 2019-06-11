@@ -1,5 +1,4 @@
 <?php
-
 /*----------------------------------------------------------------
 |
 | The Simple PHP Framework v1.0
@@ -7,6 +6,8 @@
 | *** VIEW Class ***
 ------------------------------------------------------------------*/
 namespace Simple;
+
+Use eftec\bladeone\BladeOne;
 
 class View {
 
@@ -16,9 +17,9 @@ class View {
      * @param array $args - Data to be pass in the view
      * @return void
      */
-    public static function renderNormal($view, $args = []) {
+    public static function renderNormal($view, $args = [], $html = false) {
         extract($args, EXTR_SKIP);
-        $view = self::create($view);
+        $view = self::create($view, $html);
         $file = dirname(__DIR__)."/App/Views/$view";
         if(is_readable($file)){
             require $file;
@@ -49,19 +50,11 @@ class View {
      * @return void
      */
     public static function render($template, $args = []){
-        static $twig = null;
-        $view = self::create($template, true);
-        if($twig===null){
-            $loader = new \Twig\Loader\FilesystemLoader('../App/Views');
-            if(twigcache == true){
-                $twig = new \Twig\Environment($loader, [
-                    'cache' => '../simple/Cache/Views',
-                ]);
-            } else {        
-                $twig = new \Twig\Environment($loader);                        
-            }
-        }
-        echo $twig->render($view, $args);
+        $views = dirname(__DIR__) . '/App/views';
+        $cache = __DIR__ . '/Cache/Views';
+        $blade = new BladeOne($views,$cache,BladeOne::MODE_AUTO);
+        $blade->setIsCompiled(CACHE_VIEWS);
+        echo $blade->run($template,$args);
     }
 
 }
