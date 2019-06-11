@@ -31,6 +31,7 @@ composer update
 Via Composer: (recommended) 
 ```
 composer create-project reyjhon/simple-php
+cd simple-php
 ```
 
 # Serving Simple-PHP
