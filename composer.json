@@ -13,10 +13,14 @@
         }
     ],
     "require": {
-        "twig/twig": "^2.0"
+        "twig/twig": "^2.0",
+        "latitude/latitude": "^3.3"
     },
 
     "autoload": {
+        "files": [
+            "simple/functions.php"
+        ],
         "psr-4": {
             "Simple\\": "simple",
             "App\\": "App/"
