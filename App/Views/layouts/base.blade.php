@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>{% block title %}{%endblock%}</title>
+    <title>@yield('title')</title>
 </head>
 <style>
     body {
@@ -28,9 +28,11 @@
 </style>
 <body>
     <nav>
-        <a href="/">Home</a> | 
+        | <a href="/">Home</a> |  
     </nav>
-   {% block body %}
-   {% endblock %}
+ @yield('content')
+   <footer>
+    <strong><a target="_blank" href="https://github.com/jhayann/simple-php">https://github.com/jhayann/simple-php</a></strong>
+ </footer>
 </body>
 </html>
