@@ -7,13 +7,11 @@ The Simple PHP is lightweight web application framework.
 - Using namespace in classes with autoloading
 - Controllers with method filters
 - Beatiful and Elegant Syntax
-- Uses Twig Template Engine (optional)
+- Uses Blade Template Engine (optional)
 - Models with resource-friendly connectivity
 - Evironment Configuration
 - Error Handling and Reporting
 - Easily manage dependency using composer
-
-**Twig will be replace by laravels' blade template engine soon**
 
 **Rewriting whole framework ongoing, To be [PSR-1](http://www.php-fig.org/psr/psr-1/),
 [PSR-2](http://www.php-fig.org/psr/psr-2/), and [PSR-4](http://www.php-fig.org/psr/psr-4/) compliant.**
