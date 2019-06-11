@@ -7,6 +7,8 @@
 ------------------------------------------------------------------*/
 namespace Simple;
 use PDO;
+use Latitude\QueryBuilder\Engine\MySqlEngine;
+use Latitude\QueryBuilder\QueryFactory;
 
 abstract class Model {
 
@@ -26,8 +28,17 @@ abstract class Model {
 
         }
     }
+
+    /**
+     * Instantiate Latitude query Builder. for more info
+     * https://latitude.shadowhand.me/
+     * 
+     * For the meantime we're using a third-party library 
+     * while developing simple-php's own query builder
+     * @return object
+     */
+    public static function factory() {
+        return new QueryFactory(new MySqlEngine());
+    } 
     
-
-
-
 }
