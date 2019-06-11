@@ -13,6 +13,8 @@ The Simple PHP is lightweight web application framework.
 - Error Handling and Reporting
 - Easily manage dependency using composer
 
+**Twig will be replace by laravels' blade template engine soon**
+
 # Simple PHP dependencies
 - [TwigTemplateEngine](https://twig.symfony.com)
 
