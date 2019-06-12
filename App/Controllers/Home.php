@@ -5,10 +5,9 @@
  */
 namespace App\Controllers;
 
-use Simple\Controller as SimpleController;
 use Simple\View as view;
 
-class Home extends SimpleController {
+class Home extends Controller {
 
     public function index() {
 

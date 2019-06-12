@@ -1,7 +1,7 @@
 {
     "name": "reyjhon/simple-php",
     "description": "The Simple PHP is lightweight web application framework.",
-    "keywords": ["framework", "simplephp"],
+    "keywords": ["framework", "simplephp", "simply"],
     "homepage": "https://gitlab.com/jhayann/simple",
     "license": "MIT",
     "type": "project",
@@ -13,21 +13,10 @@
         }
     ],
     "require": {
-        "eftec/bladeone": "3.29",
-        "latitude/latitude": "^3.3"
-    },
-    "suggest": {
-        "intervention/image": "To handle Image processing in this micro framework",
-        "phpmailer/phpmailer": "For handling emails and provide extensible features",
-        "filp/whoops": "Install this to have a pretty page for error like laravel",
-        "wixel/gump": "For validations, You can try gump. https://github.com/Wixel/GUMP"
+        "simplyphp/framework": "1.2.*"
     },
     "autoload": {
-        "files": [
-            "simple/functions.php"
-        ],
         "psr-4": {
-            "Simple\\": "simple",
             "App\\": "App/"
         }
     }
