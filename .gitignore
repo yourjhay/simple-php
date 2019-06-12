@@ -1,5 +1,4 @@
-
-simple/Cache
+composer.lock
+Cache/
 Logs/
 vendor/
-composer.lock
