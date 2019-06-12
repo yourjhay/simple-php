@@ -1,6 +1,6 @@
 <?php
-require '../simple/Router.php';
-use Simple\Router;
+
+use Simple\Routing\Router;
 
 Router::set('',[
   'controller' => 'home',

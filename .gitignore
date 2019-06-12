@@ -2,3 +2,4 @@
 simple/Cache
 Logs/
 vendor/
+composer.lock
