@@ -18,6 +18,11 @@ foreach (glob('../App/Config/*.php') as $filename)
 }
 
 /**
+ *  Initiate Session
+ */
+session_start();
+
+/**
  * COMPOSER Autoloader
  */
 require_once dirname(__DIR__) . '/vendor/autoload.php';
