@@ -7,7 +7,8 @@ namespace App\Controllers;
 
 use Simple\View as view;
 
-class Home extends Controller {
+class Home extends Controller 
+{
 
     public function index() {
 

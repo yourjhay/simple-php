@@ -2,10 +2,12 @@
 
 namespace App\Helper;
 
-class SampleHelper {
+class SampleHelper 
+{
 
-    public static function uppercase($var=null)
+    public static function uppercase($var = null)
     {
         return strtoupper($var);
     }
+
 }

@@ -2,8 +2,8 @@
 /**
  * Application Configuration Settings
  */
-define('APP_NAME','SIMPLE-PHP',true);
-define('APP_DESCRIPTION','The "Simple-PHP" Framework',true);
+define('APP_NAME','SIMPLy-PHP',true);
+define('APP_DESCRIPTION','The "Simply-PHP" Framework',true);
 
 /**
  * Error handling behaviour

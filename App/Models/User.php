@@ -7,7 +7,8 @@
 namespace App\Models;
 use Simple\Model;
 
-class User extends Model {
+class User extends Model
+{
 
     
 
