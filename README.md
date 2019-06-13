@@ -42,7 +42,7 @@ cd simple-php
 ```
 
 # Serving Simple-PHP
-PHP-simple doesn't need a real web server to run when in development.
+PHP-simple doesn't need a real web server to run when in development(experimental).
 
 **NOTE: YOU MUST BE IN /public directory of your project** then run the following command:
 ```
