@@ -1,4 +1,4 @@
-# The Simple PHP Framewrok
+# The Simply PHP Framewrok
 [![Latest Stable Version](https://poser.pugx.org/simplyphp/framework/v/stable)](https://packagist.org/packages/simplyphp/framework)
 [![Total Downloads](https://poser.pugx.org/simplyphp/framework/downloads)](https://packagist.org/packages/simplyphp/framework)
 [![License](https://poser.pugx.org/simplyphp/framework/license)](https://packagist.org/packages/simplyphp/framework)
@@ -11,7 +11,7 @@ The Simple PHP is lightweight web application framework.
 - Using namespace in classes with autoloading
 - Controllers with method filters
 - Beatiful and Elegant Syntax
-- Uses Blade Template Engine (optional)
+- Uses Twig Template Engine (optional)
 - Models with resource-friendly connectivity
 - Evironment Configuration
 - Error Handling and Reporting
