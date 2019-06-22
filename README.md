@@ -154,6 +154,8 @@ Simply PHP provides a quick way to scaffold all of the routes and views you need
 php cli MakeAuth
 ```
 
+# Validation
+Read documentation at https://github.com/jhayann/simple-php/blob/master/validation.md
 
 
 ## Documentation will be updated soon... 
