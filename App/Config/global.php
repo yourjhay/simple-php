@@ -4,7 +4,7 @@
  */
 define('APP_NAME','SIMPLy-PHP',true);
 define('APP_DESCRIPTION','The "Simply-PHP" Framework',true);
-
+define('BASEURL','',true);
 /**
  * Error handling behaviour
  * Set to false in production
