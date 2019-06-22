@@ -24,17 +24,6 @@ The Simple PHP is lightweight web application framework.
 - [TwigTemplateEngine](https://twig.symfony.com)
 
 # Installation
-Via Git:
-```
-git clone https://gitlab.com/jhayann/simple.git
-```
-Then run this 2 commands:
-```
-cd simple-php
-
-composer update
-```
-
 Via Composer: (recommended) 
 ```
 composer create-project reyjhon/simple-php
@@ -145,6 +134,27 @@ example:
 - **show** accepts _show_ only
 - **\bSHOW|\bEDIT|\bUPDATE** accepts _show_, _edit_ and _update_ (case insensitive).
 - You can set your own regex.
+
+## CLI
+Simply PHP has a CLI utility.
+
+To create a controller:
+```
+php cli MakeController ControllerName
+```
+
+To create a model:
+```
+php cli MakeModel ModelName
+```
+
+# Authentication
+Simply PHP provides a quick way to scaffold all of the routes and views you need for authentication using one simple command:
+```
+php cli MakeAuth
+```
+
+
 
 ## Documentation will be updated soon... 
 
