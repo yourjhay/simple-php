@@ -1,0 +1,84 @@
+<?php
+$controllerPath = 'App/Controllers/';
+$modelPath = 'App/Models/';
+if (isset($argc)) {
+    if($argv[1] == "MakeController") 
+    {
+        createController($argv[2]);
+    } else if($argv[1] == "MakeModel") { 
+        createModel($argv[2]);
+    } else if($argv[1] == "MakeAuth") { 
+        authGenerate();
+    } else {
+        echo "command not found";
+    }
+}
+else {
+	echo "argc and argv disabled\n";
+}
+
+function createModel($model)
+{
+    global $modelPath;
+    $content = '<?php
+namespace App\Models;
+
+Use Simple\Model;
+Use function Latitude\QueryBuilder\field;
+Use PDO;
+
+class '.$model.' extends Model
+{
+    /**
+     *  This generated '.$model.' model.
+     *  Create Something great!
+     */
+}
+';
+    $file = fopen("$modelPath$model.php", 'w');
+    if(fwrite($file,$content)) {
+        echo 'Model created successfully';
+    } else {
+        echo 'failed to create model';
+    }
+    fclose($file);
+}
+
+function createController($controller)
+{
+global $controllerPath;
+$contentController = '<?php
+namespace App\Controllers;
+
+Use Simple\View as view;
+Use Simple\Request as r;
+
+class '.$controller.' extends Controller
+{
+    public function index()
+    {
+        
+    }
+}';
+    $file = fopen("$controllerPath$controller.php", 'w');
+        if(fwrite($file,$contentController)) {
+            echo 'Controller created successfully';
+        } else {
+            echo 'failed to create controller';
+        }
+        fclose($file);
+}
+
+function authGenerate()
+{
+    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\controller\*.php') as $filename)
+    {
+        $dest = "App/Controllers/Auth/".basename($filename);
+        if (!file_exists('App/Controllers/Auth')) {
+            mkdir('App/Controllers/Auth', 0777, true);
+        }
+        $file = fopen($dest, "w");
+        copy($filename, $dest);
+        fclose($file);
+    }
+}
