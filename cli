@@ -71,7 +71,8 @@ class '.$controller.' extends Controller
 
 function authGenerate()
 {
-    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\controller\*.php') as $filename)
+    $success = true;
+   foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\controller\*.php') as $filename)
     {
         $dest = "App/Controllers/Auth/".basename($filename);
         if (!file_exists('App/Controllers/Auth')) {
@@ -80,5 +81,50 @@ function authGenerate()
         $file = fopen($dest, "w");
         copy($filename, $dest);
         fclose($file);
+        
+    }
+
+    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\helper\*.php') as $filename)
+    {
+        $dest = "App/Helper/Auth/".basename($filename);
+        if (!file_exists('App/Helper/Auth')) {
+            mkdir('App/Helper/Auth', 0777, true);
+        }
+        $file = fopen($dest, "w");
+        copy($filename, $dest);
+        fclose($file);
+    }
+    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\model\*.php') as $filename)
+    {
+        $dest = "App/Models/".basename($filename);
+        $file = fopen($dest, "w");
+        copy($filename, $dest);
+        fclose($file);
+    } 
+    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\Views\Auth\*.html') as $filename)
+    {
+        $dest = "App/Views/Auth/".basename($filename);
+        if (!file_exists('App/Views/Auth')) {
+            mkdir('App/Views/Auth', 0777, true);
+        }
+        $file = fopen($dest, "w");
+        copy($filename, $dest);
+        fclose($file);
+    }
+    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\Views\layouts\*.html') as $filename)
+    {
+        $dest = "App/Views/layouts/".basename($filename);
+        $file = fopen($dest, "w");
+        copy($filename, $dest);
+        fclose($file);
+    }
+    
+    $routeFile = '.\vendor\simplyphp\framework\src\AuthScafolding\routes.simply';
+    $file = file_get_contents($routeFile, FILE_USE_INCLUDE_PATH);
+    $mainRoute = "./App/Routes.php";
+    file_put_contents($mainRoute, PHP_EOL.$file, FILE_APPEND | LOCK_EX);
+
+    if($success!=false){
+        echo "Auth scaffolding created successfully"; 
     }
 }
