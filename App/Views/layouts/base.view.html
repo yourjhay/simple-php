@@ -1,39 +1,44 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Simply PHP</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/src/css/bootstrap.min.css">
+
+  <title>Hello, world!</title>
 </head>
-<style>
-    body {
-        color: #76787a;
-    }
-    .header{
-        font-size: 60px;
-        width:auto;
-        text-align:center;
-        margin-top:20%;
-        font-weight: bold;
-    }
-    .text {
-        text-align: center;
-        font-size:30px;
-    }
-    footer{
-        text-align:center;
-    }
-    a {
-        text-decoration: none;
-        color:#76787a;
-    }
-</style>
+
 <body>
-    <nav>
-        | <a href="/">Home</a> |  
-    </nav>
-        {% block body %}
-        {% endblock %}
-   <footer>
-    <strong><a target="_blank" href="https://github.com/jhayann/simple-php">https://github.com/jhayann/simple-php</a></strong>
- </footer>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">{{name}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://github.com/jhayann/simple-php">Documentation</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  {% block content %}
+
+  {% endblock %}
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="src/js/popper.min.js">
+  </script>
+  <script src="src/js/bootstrap.min.js">
+  </script>
 </body>
 </html>
