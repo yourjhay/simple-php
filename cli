@@ -72,7 +72,7 @@ class '.$controller.' extends Controller
 function authGenerate()
 {
     $success = true;
-   foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\controller\*.php') as $filename)
+   foreach (glob('.\vendor\simplyphp\framework\src\AuthScaffolding\controller\*.php') as $filename)
     {
         $dest = "App/Controllers/Auth/".basename($filename);
         if (!file_exists('App/Controllers/Auth')) {
@@ -84,7 +84,7 @@ function authGenerate()
         
     }
 
-    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\helper\*.php') as $filename)
+    foreach (glob('.\vendor\simplyphp\framework\src\AuthScaffolding\helper\*.php') as $filename)
     {
         $dest = "App/Helper/Auth/".basename($filename);
         if (!file_exists('App/Helper/Auth')) {
@@ -94,14 +94,14 @@ function authGenerate()
         copy($filename, $dest);
         fclose($file);
     }
-    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\model\*.php') as $filename)
+    foreach (glob('.\vendor\simplyphp\framework\src\AuthScaffolding\model\*.php') as $filename)
     {
         $dest = "App/Models/".basename($filename);
         $file = fopen($dest, "w");
         copy($filename, $dest);
         fclose($file);
     } 
-    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\Views\Auth\*.html') as $filename)
+    foreach (glob('.\vendor\simplyphp\framework\src\AuthScaffolding\Views\Auth\*.html') as $filename)
     {
         $dest = "App/Views/Auth/".basename($filename);
         if (!file_exists('App/Views/Auth')) {
@@ -111,7 +111,7 @@ function authGenerate()
         copy($filename, $dest);
         fclose($file);
     }
-    foreach (glob('.\vendor\simplyphp\framework\src\AuthScafolding\Views\layouts\*.html') as $filename)
+    foreach (glob('.\vendor\simplyphp\framework\src\AuthScaffolding\Views\layouts\*.html') as $filename)
     {
         $dest = "App/Views/layouts/".basename($filename);
         $file = fopen($dest, "w");
@@ -119,7 +119,7 @@ function authGenerate()
         fclose($file);
     }
     
-    $routeFile = '.\vendor\simplyphp\framework\src\AuthScafolding\routes.simply';
+    $routeFile = '.\vendor\simplyphp\framework\src\AuthScaffolding\routes.simply';
     $file = file_get_contents($routeFile, FILE_USE_INCLUDE_PATH);
     $mainRoute = "./App/Routes.php";
     file_put_contents($mainRoute, PHP_EOL.$file, FILE_APPEND | LOCK_EX);
