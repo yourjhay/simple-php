@@ -36,6 +36,7 @@ PHP-simple doesn't need a real web server to run when in development(experimenta
 php -S localhost:8000 -t public/
 ```
 then you can now navigate _localhost:8000_ to to your browser. Awesome!
+
 You need a mysql server if your app need to communicate with database. I recommend xampp for windows.
 # Using the Simple Framework
 
