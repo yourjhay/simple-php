@@ -58,9 +58,9 @@ The root directory:
     '-|Helper
     '-|Model
     '-|Views
-|-Logs
+|-database
 |-public
-|-Simple
+|-Simply
 |-vendor
 ```
 **The App directory:**
@@ -72,9 +72,9 @@ The root directory:
 - 
 **The root Directory**
 - **App:** Most of your application logic is here. Eg.Controllers, Models & Views.
-- **Logs:** Application Error logs is store in this folder.
+- **database:** put your sql files here.
 - **public:** The _public_ DIR contains the index.php as the central entry point and front controller of the framework.
-- **simple:** Contains all the files running the framework.
+- **Simply:** Contains logs and cache of your application.
 - **vendor:** Contains all your composer dependencies.
 
 # The Basics
