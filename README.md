@@ -177,6 +177,8 @@ php cli MakeAuth
 # Validation
 Read documentation at https://github.com/jhayann/simple-php/blob/master/validation.md
 
+# Database Query
+Read documentation at https://github.com/jhayann/simple-php/blob/master/queryBuilder.md
 
 ## Documentation will be updated soon... 
 
