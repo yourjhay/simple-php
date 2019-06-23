@@ -135,7 +135,8 @@ example:
 - **\bSHOW|\bEDIT|\bUPDATE** accepts _show_, _edit_ and _update_ (case insensitive).
 - You can set your own regex.
 
-## CLI
+## USING CLI for _Controller_ & _Model_
+
 Simply PHP has a CLI utility.
 
 To create a controller:
@@ -154,6 +155,8 @@ Simply PHP provides a quick way to scaffold all of the routes and views you need
 php cli MakeAuth
 ```
 
+# Validation
+Read documentation at https://github.com/jhayann/simple-php/blob/master/validation.md
 
 
 ## Documentation will be updated soon... 
