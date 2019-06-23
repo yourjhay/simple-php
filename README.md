@@ -21,7 +21,8 @@ The Simple PHP is lightweight web application framework.
 [PSR-2](http://www.php-fig.org/psr/psr-2/), and [PSR-4](http://www.php-fig.org/psr/psr-4/) compliant.**
 
 # Simple PHP dependencies
-- [TwigTemplateEngine](https://twig.symfony.com)
+- [Twig Template Engine](https://twig.symfony.com)
+- [Latitude Query Builder](https://github.com/shadowhand/latitude)
 
 # Installation
 Via Composer: (recommended) 
