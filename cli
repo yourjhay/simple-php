@@ -2,15 +2,30 @@
 $controllerPath = 'App/Controllers/';
 $modelPath = 'App/Models/';
 if (isset($argc)) {
-    if($argv[1] == "MakeController") 
+    if($argv[1] == "makeController") 
     {
         createController($argv[2]);
-    } else if($argv[1] == "MakeModel") { 
+
+    } else if($argv[1] == "makeModel") { 
+
         createModel($argv[2]);
-    } else if($argv[1] == "MakeAuth") { 
+
+    } else if($argv[1] == "makeAuth") { 
+
         authGenerate();
+
+    } else if($argv[1] == "migrate") { 
+
+        import($argv[2]);
+
+    } else if($argv[1] == "seed") { 
+
+        seed();
+
     } else {
-        echo "command not found";
+
+        echo "simply command not found";
+
     }
 }
 else {
@@ -19,6 +34,7 @@ else {
 
 function createModel($model)
 {
+    $c = new Colors();
     global $modelPath;
     $content = '<?php
 namespace App\Models;
@@ -37,15 +53,16 @@ class '.$model.' extends Model
 ';
     $file = fopen("$modelPath$model.php", 'w');
     if(fwrite($file,$content)) {
-        echo 'Model created successfully';
+        echo PHP_EOL.$c->cs(' Model created successfully ', "black", "green");
     } else {
-        echo 'failed to create model';
+        echo PHP_EOL.$c->cs(' failed to create model ', "white", "red");
     }
     fclose($file);
 }
 
 function createController($controller)
 {
+    $c = new Colors();
 global $controllerPath;
 $contentController = '<?php
 namespace App\Controllers;
@@ -62,15 +79,16 @@ class '.$controller.' extends Controller
 }';
     $file = fopen("$controllerPath$controller.php", 'w');
         if(fwrite($file,$contentController)) {
-            echo 'Controller created successfully';
+            echo PHP_EOL.$c->cs(' Controller created successfully ', "black", "green");
         } else {
-            echo 'failed to create controller';
+            echo PHP_EOL.$c->cs('failed to create controller', "white","red");
         }
         fclose($file);
 }
 
 function authGenerate()
 {
+    $c = new Colors();
     $success = true;
    foreach (glob('.\vendor\simplyphp\framework\src\AuthScaffolding\controller\*.php') as $filename)
     {
@@ -125,6 +143,150 @@ function authGenerate()
     file_put_contents($mainRoute, PHP_EOL.$file, FILE_APPEND | LOCK_EX);
 
     if($success!=false){
-        echo "Auth scaffolding created successfully"; 
+        echo PHP_EOL.$c->cs(" Auth scaffolding created successfully ", "black", "green"); 
     }
 }
+
+function import($file)
+{
+    if(empty($file))
+    {
+        echo PHP_EOL.'Please specify the .sql filename';
+        exit;
+    }
+require 'App/Config/global.php';
+$mysqlDatabaseName = DBNAME;
+$mysqlUserName =DBUSER;
+$mysqlPassword =DBPASS;
+$mysqlHostName =DBSERVER;
+$mysqlImportFilename ="./database/$file.sql";
+
+$command='mysql -h' .$mysqlHostName .' -u' .$mysqlUserName .' -p' .$mysqlPassword .' ' .$mysqlDatabaseName .' < ' .$mysqlImportFilename;
+
+//var_dump( file_exists('postcode_withLatlang.sql') );
+
+$output = array();
+
+exec($command, $output, $worked);
+echo PHP_EOL.'Returned Code: ' .$worked;
+
+// test whether they are imported successfully or not
+switch ($worked) {
+    case 0:
+        echo PHP_EOL.'Import file ' .$mysqlImportFilename .' successfully imported to database: ' .$mysqlDatabaseName;
+        break;
+    case 1:
+        echo PHP_EOL.'There was an error during import.';
+        break;
+    }
+}
+
+function seed() 
+{
+$c = new Colors();
+require 'App/Config/global.php';
+$dbname = DBNAME;
+$dbuser = DBUSER;
+$dbpass = DBPASS;
+$dbserver = DBSERVER;
+    start:
+    echo "seeding...".PHP_EOL;
+    echo $c->cs(" Enter name: ","white","cyan");
+    $handle = fopen ("php://stdin","r");
+    $line = fgets($handle);
+    $name = trim($line);
+    fclose($handle);
+    echo $c->cs(" Enter Email: ", "white", "magenta");
+    $handle = fopen ("php://stdin","r");
+    $line = fgets($handle);
+    $email = trim($line);
+    fclose($handle);
+    echo $c->cs( " Enter password: ", "black","light_gray");
+    $handle = fopen ("php://stdin","r");
+    $line = fgets($handle);
+    $password = trim($line);
+    fclose($handle);
+    $db = new mysqli ($dbserver,$dbuser,$dbpass,$dbname);
+    $stmt = $db->prepare("INSERT INTO users(name,email,password_hash) VALUES(?,?,?)") or die($db->error);
+    $password = password_hash($password, PASSWORD_BCRYPT);
+    $stmt->bind_param("sss",$name,$email,$password);
+    if($stmt->execute()){
+        echo PHP_EOL.$c->cs(" Seeding successfull " , "black", "green");
+    } else {
+        echo PHP_EOL. $c->cs(" Seeding failed: $stmt->error", "white", "red");
+    }
+    echo PHP_EOL."Do you want to seed another entry? (yes|no): ";
+    $handle = fopen ("php://stdin","r");
+    $line = fgets($handle);
+    $ans = trim($line);
+    fclose($handle);
+    if($ans == 'yes') {
+        goto start;
+    } else {
+        exit;
+    }
+}
+class Colors {
+    private $foreground_colors = array();
+    private $background_colors = array();
+
+    public function __construct() {
+        // Set up shell colors
+        $this->foreground_colors['black'] = '0;30';
+        $this->foreground_colors['dark_gray'] = '1;30';
+        $this->foreground_colors['blue'] = '0;34';
+        $this->foreground_colors['light_blue'] = '1;34';
+        $this->foreground_colors['green'] = '0;32';
+        $this->foreground_colors['light_green'] = '1;32';
+        $this->foreground_colors['cyan'] = '0;36';
+        $this->foreground_colors['light_cyan'] = '1;36';
+        $this->foreground_colors['red'] = '0;31';
+        $this->foreground_colors['light_red'] = '1;31';
+        $this->foreground_colors['purple'] = '0;35';
+        $this->foreground_colors['light_purple'] = '1;35';
+        $this->foreground_colors['brown'] = '0;33';
+        $this->foreground_colors['yellow'] = '1;33';
+        $this->foreground_colors['light_gray'] = '0;37';
+        $this->foreground_colors['white'] = '1;37';
+
+        $this->background_colors['black'] = '40';
+        $this->background_colors['red'] = '41';
+        $this->background_colors['green'] = '42';
+        $this->background_colors['yellow'] = '43';
+        $this->background_colors['blue'] = '44';
+        $this->background_colors['magenta'] = '45';
+        $this->background_colors['cyan'] = '46';
+        $this->background_colors['light_gray'] = '47';
+    }
+
+    // Returns colored string
+    public function cs($string, $foreground_color = null, $background_color = null) {
+        $colored_string = "";
+
+        // Check if given foreground color found
+        if (isset($this->foreground_colors[$foreground_color])) {
+            $colored_string .= "\033[" . $this->foreground_colors[$foreground_color] . "m";
+        }
+        // Check if given background color found
+        if (isset($this->background_colors[$background_color])) {
+            $colored_string .= "\033[" . $this->background_colors[$background_color] . "m";
+        }
+
+        // Add string and end coloring
+        $colored_string .=  $string . "\033[0m";
+
+        return $colored_string;
+    }
+
+    // Returns all foreground color names
+    public function getForegroundColors() {
+        return array_keys($this->foreground_colors);
+    }
+
+    // Returns all background color names
+    public function getBackgroundColors() {
+        return array_keys($this->background_colors);
+    }
+}
+
+?>
