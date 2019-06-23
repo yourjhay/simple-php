@@ -1,2 +1,16 @@
 The Simple-PHP Framework
-1.0 Initial Release
+v1.0            Initial Release v1.0
+v1.1            The Simple-PHP Stable release v1.1
+v1.2            Fixed Some errors on the front controller
+v1.2.1          Update the default template and fixe some errors
+v1.2.2          Fixed bugs and security issue on Core files
+v1.2.3          added support for query builder and fix some bugs
+v1.2.4          Replace old views, and added .gitattribute
+v1.2.6          Completely Move  framework files  to separate repository..
+v1.2.7          Move  logs and cache folder to simply directory
+v1.2.8          Release 1.2.8 fixes some code format and bugs
+v1.2.9          New version with validation helper
+v1.2.10         Fixes minor bugs
+v1.2.11         added cli feature
+v1.2.12         Fixed bugs on cli
+v1.2.13         added more feature to cli
