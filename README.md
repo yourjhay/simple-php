@@ -149,7 +149,7 @@ To create a model:
 php cli makeModel ModelName
 ```
 
-## Using CLI for importing database tables
+## Using CLI for importing database tables(mysql)
 
 To import users table included in the framework:
 ```
@@ -163,6 +163,8 @@ Inserting data to users table:
 ```
 php cli seed
 ```
+if you're promt to enter a password (Enter mysql server password)
+
 You will be promt to enter the following fields: _name, email and password_.
 
 
