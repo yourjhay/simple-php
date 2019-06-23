@@ -173,6 +173,45 @@ Simply PHP provides a quick way to scaffold all of the routes and views you need
 ```
 php cli MakeAuth
 ```
+### restrict controller to authenticated users only
+add the _Action_ suffix into your method name.  
+
+example: if you have a method index in your controller:
+```php
+   public function index()
+```
+Make it:
+```php
+public function indexAction()
+```
+Then add this to 'App/Controllers/Controller.php':
+```php
+use App\Helper\Auth\AuthHelper as auth;
+use Simple\Request as r;
+```
+And create a new method _before_ like this:
+```php
+    public function before()
+    {
+        if(!auth::user()) {
+            r::redirect('/auth/index');
+        }
+    }
+```
+The un-authenticated user tries to access your restricted controller will be redirected to login page.
+
+## Using auth in views
+If the user is authenticated the user variable is not null.:
+```html
+  {% if user is null %}
+      <p> Please login </p>
+  {% else %}
+      <p> Hello {{ user.name }} </p>  
+  {% endif %}
+```
+- {{ user.name }} display name of current logged in user.
+- {{ user.email }} display email of current logged in user.
+- {{ user.id }} display ID of current logged in user.
 
 # Validation
 Read documentation at https://github.com/jhayann/simple-php/blob/master/validation.md
