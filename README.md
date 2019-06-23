@@ -32,10 +32,8 @@ cd simple-php
 
 # Serving Simple-PHP
 PHP-simple doesn't need a real web server to run when in development(experimental).
-
-**NOTE: YOU MUST BE IN /public directory of your project** then run the following command:
 ```
-php -S localhost:8000
+php -S localhost:8000 -t public/
 ```
 then you can now navigate _localhost:8000_ to to your browser. Awesome!
 
