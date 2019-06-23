@@ -153,11 +153,11 @@ php cli makeModel ModelName
 
 To import users table included in the framework:
 ```
-php cli import users
+php cli migrate users
 ```
 Additionaly you can import your own .sql file (just put in the database DIR) then:
 ```
-php cli import yourSqlFilename
+php cli migrate yourSqlFilename
 ```
 Inserting data to users table:
 ```
