@@ -21,7 +21,8 @@ The Simple PHP is lightweight web application framework.
 [PSR-2](http://www.php-fig.org/psr/psr-2/), and [PSR-4](http://www.php-fig.org/psr/psr-4/) compliant.**
 
 # Simple PHP dependencies
-- [TwigTemplateEngine](https://twig.symfony.com)
+- [Twig Template Engine](https://twig.symfony.com)
+- [Latitude Query Builder](https://github.com/shadowhand/latitude)
 
 # Installation
 Via Composer: (recommended) 
@@ -32,13 +33,12 @@ cd simple-php
 
 # Serving Simple-PHP
 PHP-simple doesn't need a real web server to run when in development(experimental).
-
-**NOTE: YOU MUST BE IN /public directory of your project** then run the following command:
 ```
-php -S localhost:8000
+php -S localhost:8000 -t public/
 ```
 then you can now navigate _localhost:8000_ to to your browser. Awesome!
 
+You need a mysql server if your app need to communicate with database. I recommend xampp for windows.
 # Using the Simple Framework
 
 ## configuration:
@@ -59,9 +59,9 @@ The root directory:
     '-|Helper
     '-|Model
     '-|Views
-|-Logs
+|-database
 |-public
-|-Simple
+|-Simply
 |-vendor
 ```
 **The App directory:**
@@ -73,9 +73,9 @@ The root directory:
 - 
 **The root Directory**
 - **App:** Most of your application logic is here. Eg.Controllers, Models & Views.
-- **Logs:** Application Error logs is store in this folder.
+- **database:** put your sql files here.
 - **public:** The _public_ DIR contains the index.php as the central entry point and front controller of the framework.
-- **simple:** Contains all the files running the framework.
+- **Simply:** Contains logs and cache of your application.
 - **vendor:** Contains all your composer dependencies.
 
 # The Basics
@@ -141,12 +141,12 @@ Simply PHP has a CLI utility.
 
 To create a controller:
 ```
-php cli makeController ControllerName
+php cli make::controller ControllerName
 ```
 
 To create a model:
 ```
-php cli makeModel ModelName
+php cli make::model ModelName
 ```
 
 ## Using CLI for importing database tables(mysql)
@@ -171,8 +171,47 @@ You will be promt to enter the following fields: _name, email and password_.
 # Authentication
 Simply PHP provides a quick way to scaffold all of the routes and views you need for authentication using one simple command:
 ```
-php cli MakeAuth
+php cli make::auth
 ```
+### restrict controller to authenticated users only
+add the _Action_ suffix into your method name.  
+
+example: if you have a method index in your controller:
+```php
+   public function index()
+```
+Make it:
+```php
+public function indexAction()
+```
+Then add this to 'App/Controllers/Controller.php':
+```php
+use App\Helper\Auth\AuthHelper as auth;
+use Simple\Request as r;
+```
+And create a new method _before_ like this:
+```php
+    public function before()
+    {
+        if(!auth::user()) {
+            r::redirect('/auth/index');
+        }
+    }
+```
+The un-authenticated user tries to access your restricted controller will be redirected to login page.
+
+## Using auth in views
+If the user is authenticated the user variable is not null.:
+```html
+  {% if user is null %}
+      <p> Please login </p>
+  {% else %}
+      <p> Hello {{ user.name }} </p>  
+  {% endif %}
+```
+- {{ user.name }} display name of current logged in user.
+- {{ user.email }} display email of current logged in user.
+- {{ user.id }} display ID of current logged in user.
 
 # Validation
 Read documentation at https://github.com/jhayann/simple-php/blob/master/validation.md
