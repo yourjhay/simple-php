@@ -5,7 +5,7 @@
  */
 namespace App\Controllers;
 
-use Simple\View as view;
+use function Simple\view;
 
 class Home extends Controller 
 {
@@ -17,9 +17,11 @@ class Home extends Controller
          * Documentation: https://twig.symfony.com/doc/2.x/api.html
          * 
          * if you want to render view without template engine
-         * use view::renderNormal('viewname',array())
+         * use view::renderNormal('viewname',array()) or 
+         * return view('view.name',$data,'normal')
          */
-        view::render('home.index',[
+
+        return view('home.index',[
             'name'        => APP_NAME,
             'description' => APP_DESCRIPTION
         ]);
