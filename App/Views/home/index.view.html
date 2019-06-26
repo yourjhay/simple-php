@@ -1,0 +1,17 @@
+{% extends "layouts/base.view.html" %}
+
+{% block content %}
+<style>
+.header {
+    color:rgb(104, 108, 110);
+    font-size: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+</style>
+<div class="d-flex justify-content-center">
+        <div class="header py-5">{{ name }}</div>
+</div>
+<p class="text-center"><em>{{ description }}</em></p>
+
+{% endblock %}
