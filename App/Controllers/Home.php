@@ -5,7 +5,7 @@
  */
 namespace App\Controllers;
 
-use Simple\View as view;
+use function Simple\view;
 
 class Home extends Controller 
 {
@@ -19,7 +19,8 @@ class Home extends Controller
          * if you want to render view without template engine
          * use view::renderNormal('viewname',array())
          */
-        view::render('home.index',[
+        
+        return view('home.index',[
             'name'        => APP_NAME,
             'description' => APP_DESCRIPTION
         ]);
