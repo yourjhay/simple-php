@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b00af14c071d9f2d24795afc811b778",
+    "content-hash": "01720afba2c33d99975db6a1d6dd3a92",
     "packages": [
         {
             "name": "latitude/latitude",
@@ -59,16 +59,16 @@
         },
         {
             "name": "simplyphp/framework",
-            "version": "v1.2.18",
+            "version": "v1.2.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhayann/framework.git",
-                "reference": "af2f25be7564232d672c76726d2af0b1483bd725"
+                "reference": "fcf1de9f41534ba8d0e0e88069be438eb8f22e61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhayann/framework/zipball/af2f25be7564232d672c76726d2af0b1483bd725",
-                "reference": "af2f25be7564232d672c76726d2af0b1483bd725",
+                "url": "https://api.github.com/repos/jhayann/framework/zipball/fcf1de9f41534ba8d0e0e88069be438eb8f22e61",
+                "reference": "fcf1de9f41534ba8d0e0e88069be438eb8f22e61",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +109,7 @@
                 "framework",
                 "simplephp"
             ],
-            "time": "2019-06-25T04:47:29+00:00"
+            "time": "2019-06-26T05:19:31+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
