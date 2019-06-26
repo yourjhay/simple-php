@@ -20,7 +20,7 @@ class Home extends Controller
          * use view::renderNormal('viewname',array()) or 
          * return view('view.name',$data,'normal')
          */
-        return view('Home.index',[
+        return view('home.index',[
             'name'        => APP_NAME,
             'description' => APP_DESCRIPTION
         ]);
