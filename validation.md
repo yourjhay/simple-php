@@ -108,6 +108,17 @@ if($validated === true) {
 }
 ```
 
+## Check if specific value exist:
+```php
+$v->validation_rules(array(
+	'username'    => 'required|alpha_numeric|max_len,100|min_len,6|unique,users',
+	'password'    => 'required|max_len,100|min_len,6',
+	'email'       => 'required|valid_email|unique,users',
+));
+```
+To check whether a record is exist, add the **unique** rule and the table where to check.
+
+In this example we are checking whether the username and email is already exist in **users** table.
 
 Match data-keys against rules-keys
 -------------
