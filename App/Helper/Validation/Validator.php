@@ -57,13 +57,13 @@ class Validator
     public static $basic_tags = '<br><p><a><strong><b><i><em><img><blockquote><code><dd><dl><hr><h1><h2><h3><h4><h5><h6><label><ul><li><span><sub><sup>';
 
     public static $en_noise_words = "about,after,all,also,an,and,another,any,are,as,at,be,because,been,before,
-                                     being,between,both,but,by,came,can,come,could,did,do,each,for,from,get,
-                                     got,has,had,he,have,her,here,him,himself,his,how,if,in,into,is,it,its,it's,like,
-                                     make,many,me,might,more,most,much,must,my,never,now,of,on,only,or,other,
-                                     our,out,over,said,same,see,should,since,some,still,such,take,than,that,
-                                     the,their,them,then,there,these,they,this,those,through,to,too,under,up,
-                                     very,was,way,we,well,were,what,where,which,while,who,with,would,you,your,a,
-                                     b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,$,1,2,3,4,5,6,7,8,9,0,_";
+                                    being,between,both,but,by,came,can,come,could,did,do,each,for,from,get,
+                                    got,has,had,he,have,her,here,him,himself,his,how,if,in,into,is,it,its,it's,like,
+                                    make,many,me,might,more,most,much,must,my,never,now,of,on,only,or,other,
+                                    our,out,over,said,same,see,should,since,some,still,such,take,than,that,
+                                    the,their,them,then,there,these,they,this,those,through,to,too,under,up,
+                                    very,was,way,we,well,were,what,where,which,while,who,with,would,you,your,a,
+                                    b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,$,1,2,3,4,5,6,7,8,9,0,_";
 
     // field characters below will be replaced with a space.
     protected $fieldCharsToRemove = array('_', '-');

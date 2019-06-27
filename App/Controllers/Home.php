@@ -10,8 +10,8 @@ use function Simple\view;
 class Home extends Controller 
 {
 
-    public function index() {
-
+    public function index() 
+    {
         /**
          * view::render uses twig template engine
          * Documentation: https://twig.symfony.com/doc/2.x/api.html
