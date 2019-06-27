@@ -191,7 +191,7 @@ Available Filters
 -----------------
 Filters can be any PHP function that returns a string. You don't need to create your own if a PHP function exists that does what you want the filter to do.
 
-* sanitize_string `Remove script tags and encode HTML entities, similar to GUMP::xss_clean();`
+* sanitize_string `Remove script tags and encode HTML entities, similar to validate::xss_clean();`
 * urlencode `Encode url entities`
 * htmlencode `Encode HTML entities`
 * sanitize_email `Remove illegal characters from email addresses`
@@ -241,7 +241,7 @@ validate::add_filter("upper", function($value, $params = NULL) {
 
 ```
 
-Alternately, you can simply create your own class that extends the GUMP class.
+Alternately, you can simply create your own class that extends the validate class.
 
 ```php
 
@@ -274,7 +274,7 @@ Remember to create a public methods with the correct parameter types and paramet
 
 # Set Custom Field Names
 
-You can easily override your form field names for improved readability in errors using the `GUMP::set_field_name($field, $readable_name)` method as follows:
+You can easily override your form field names for improved readability in errors using the `validate::set_field_name($field, $readable_name)` method as follows:
 
 ```php
 $data = array(
