@@ -6,8 +6,6 @@
 
 ### VALIDATION
 
-credits to https://github.com/Wixel/GUMP
-
 Make sure to use:
 ```php
 Use App\Helper\Validation\Validator as validate;
@@ -310,3 +308,5 @@ if($is_valid === true) {
 	print_r($is_valid);
 }
 ```
+credits to https://github.com/Wixel/GUMP
+
