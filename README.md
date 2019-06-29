@@ -17,8 +17,9 @@ The Simple PHP is lightweight web application framework.
 - Error Handling and Reporting
 - Easily manage dependency using composer
 
-**Rewriting whole framework ongoing, To be [PSR-1](http://www.php-fig.org/psr/psr-1/),
-[PSR-2](http://www.php-fig.org/psr/psr-2/), and [PSR-4](http://www.php-fig.org/psr/psr-4/) compliant.**
+## Demo
+http://simply-framework.herokuapp.com/
+
 
 # Simple PHP dependencies
 - [Twig Template Engine](https://twig.symfony.com)
