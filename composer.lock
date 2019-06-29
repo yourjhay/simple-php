@@ -59,16 +59,16 @@
         },
         {
             "name": "simplyphp/framework",
-            "version": "v1.2.20",
+            "version": "v1.2.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhayann/framework.git",
-                "reference": "b97a7dedb1762c8be32f2864a062daa7d739d80d"
+                "reference": "8e9850e3696383f0a58adad3370086c1e3a15851"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhayann/framework/zipball/b97a7dedb1762c8be32f2864a062daa7d739d80d",
-                "reference": "b97a7dedb1762c8be32f2864a062daa7d739d80d",
+                "url": "https://api.github.com/repos/jhayann/framework/zipball/8e9850e3696383f0a58adad3370086c1e3a15851",
+                "reference": "8e9850e3696383f0a58adad3370086c1e3a15851",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +109,7 @@
                 "framework",
                 "simplephp"
             ],
-            "time": "2019-06-26T08:05:56+00:00"
+            "time": "2019-06-27T12:22:20+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
