@@ -142,12 +142,12 @@ Simply PHP has a CLI utility.
 
 To create a controller:
 ```
-php cli make::controller ControllerName
+php cli make:controller ControllerName
 ```
 
 To create a model:
 ```
-php cli make::model ModelName
+php cli make:model ModelName
 ```
 
 ## Using CLI for importing database tables(mysql)
@@ -172,7 +172,7 @@ You will be promt to enter the following fields: _name, email and password_.
 # Authentication
 Simply PHP provides a quick way to scaffold all of the routes and views you need for authentication using one simple command:
 ```
-php cli make::auth
+php cli make:auth
 ```
 ### restrict controller to authenticated users only
 add the _Action_ suffix into your method name.  
