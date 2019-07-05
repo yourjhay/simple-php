@@ -1,9 +1,9 @@
 <?php
 namespace App\controllers;
 
-use Simple\Routing\Controller as BaseContoller;
+use Simple\Routing\Controller as BaseController;
 
-class Controller extends BaseContoller 
+class Controller extends BaseController 
 {
     
 }
