@@ -35,7 +35,11 @@ cd simple-php
 # Serving Simple-PHP
 PHP-simple doesn't need a real web server to run when in development(experimental).
 ```
-php -S localhost:8000 -t public/
+php cli serve
+```
+or define host and port:
+```
+php cli serve 127.0.0.1 port=8000
 ```
 then you can now navigate _localhost:8000_ to to your browser. Awesome!
 
