@@ -164,9 +164,9 @@ Additionaly you can import your own .sql file (just put in the database DIR) the
 ```
 php cli migrate yourSqlFilename
 ```
-Inserting data to users table:
+Inserting data to users table using cli:
 ```
-php cli seed
+php cli user:seed
 ```
 if you're promt to enter a password (Enter mysql server password)
 
