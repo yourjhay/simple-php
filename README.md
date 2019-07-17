@@ -50,14 +50,14 @@ You need a mysql server if your app need to communicate with database. I recomme
 Configuraion file is located at: App/Config/global.php
 ```md
 -
-|-App
+|-app
    '-|Config
        '-|global.php
 ```
 ## Directory Structure:
 ```md
 The root directory:
-|-App
+|-app
     The App directory:
     '-|Config
     '-|Controllers
@@ -66,7 +66,7 @@ The root directory:
     '-|Views
 |-database
 |-public
-|-Simply
+|-simply
 |-vendor
 ```
 **The App directory:**
@@ -80,7 +80,7 @@ The root directory:
 - **App:** Most of your application logic is here. Eg.Controllers, Models & Views.
 - **database:** put your sql files here.
 - **public:** The _public_ DIR contains the index.php as the central entry point and front controller of the framework.
-- **Simply:** Contains logs and cache of your application.
+- **simply:** Contains logs and cache of your application. This is generated when needed
 - **vendor:** Contains all your composer dependencies.
 
 # The Basics
