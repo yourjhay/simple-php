@@ -35,7 +35,11 @@ cd simple-php
 # Serving Simple-PHP
 PHP-simple doesn't need a real web server to run when in development(experimental).
 ```
-php -S localhost:8000 -t public/
+php cli serve
+```
+or define host and port:
+```
+php cli serve 127.0.0.1 port=8000
 ```
 then you can now navigate _localhost:8000_ to to your browser. Awesome!
 
@@ -160,9 +164,9 @@ Additionaly you can import your own .sql file (just put in the database DIR) the
 ```
 php cli migrate yourSqlFilename
 ```
-Inserting data to users table:
+Inserting data to users table using cli:
 ```
-php cli seed
+php cli user:seed
 ```
 if you're promt to enter a password (Enter mysql server password)
 
