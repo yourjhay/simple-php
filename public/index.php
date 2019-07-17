@@ -1,13 +1,12 @@
 <?php
 /*----------------------------------------------------------------
 |
-| The Simple PHP Framework v1.0
+| The Simple PHP Framework v1.2
 | @reyjhonbaquirin - June 09 2019
-|
-|
+| License MIT
+| 
 | *** FRONT CONTROLLER ***
 ------------------------------------------------------------------*/
-$url = $_SERVER['SERVER_NAME']=="localhost" ? substr($_SERVER['REQUEST_URI'],1) : $_SERVER['QUERY_STRING'];
 
 /**
  * Application Configs
@@ -24,8 +23,11 @@ session_start();
 
 /**
  * COMPOSER Autoloader
+ * Initialize application URL
  */
 require_once dirname(__DIR__) . '/vendor/autoload.php';
+use function Simple\url_init;
+$url = url_init();
 
 /**
  * Error Reporting
