@@ -11,7 +11,7 @@
 /**
  * Application Configs
  */
-foreach (glob('../App/Config/*.php') as $filename)
+foreach (glob('../app/Config/*.php') as $filename)
 {
     require $filename;
 }
@@ -45,6 +45,6 @@ if(ERROR_HANDLER === 'simply') {
 /**
  * Application routes
  */
-require '../App/Routes.php';
+require '../app/Routes.php';
 use Simple\Routing\Router;
 Router::dispatch($url);
