@@ -134,6 +134,7 @@ example:
 ```php
 {variableName: regex}
 ```
+- **[a-z0-9]+(?:-[a-z0-9]+)*$**   Valid Slug eg: news-report-2019
 - **_\w+_**   accepts _letters_ and _numbers_
 - **_\d+_**   accepts only _numbers_
 - **show** accepts _show_ only
