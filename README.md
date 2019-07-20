@@ -5,7 +5,7 @@
 [![Monthly Downloads](https://poser.pugx.org/simplyphp/framework/d/monthly)](https://packagist.org/packages/simplyphp/framework)
 
 ## About Simple
-The Simple PHP is lightweight web application framework.
+The Simple PHP is lightweight web application micro framework.
 - Uses Model, View, Controller Pattern
 - Simple Routing engine
 - Using namespace in classes with autoloading
