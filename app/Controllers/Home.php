@@ -1,8 +1,5 @@
 <?php
-/**
- * The index and default controller
- * SimplePHP FrameWork v1
- */
+
 namespace App\Controllers;
 
 use function Simple\view;

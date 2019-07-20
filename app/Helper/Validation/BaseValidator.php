@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Helper\Validation;
 /**
  * GUMP - A fast, extensible PHP input validation class.
@@ -39,8 +40,8 @@ class BaseValidator
     // ** ------------------------- Instance Helper ---------------------------- ** //
     /**
      * Function to create and return previously created instance
-     *
-     * @return GUMP
+     * @throws
+     * @return BaseValidator
      */
 
     public static function get_instance(){
@@ -91,7 +92,7 @@ class BaseValidator
      *
      * @param array $data       The data to be validated
      * @param array $validators The GUMP validators
-     *
+     * @throws
      * @return mixed True(boolean) or the array of error messages
      */
     public static function is_valid(array $data, array $validators)
