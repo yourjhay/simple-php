@@ -5,6 +5,8 @@
 define('APP_NAME','Simply PHP',true);
 define('APP_DESCRIPTION','The "Simply-PHP" Framework',true);
 define('BASEURL','',true);
+define('APP_KEY', '');
+
 /**
  * Error handling behaviour
  * Set to false in production
@@ -32,3 +34,12 @@ define('DBSERVER', 'localhost',true);
 define('DBUSER', 'root', true);
 define('DBPASS', '', true);
 define('DBNAME','simply', true);
+
+
+
+
+
+
+
+
+
