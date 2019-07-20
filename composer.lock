@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "9b00af14c071d9f2d24795afc811b778",
@@ -59,16 +59,16 @@
         },
         {
             "name": "simplyphp/framework",
-            "version": "v1.2.24",
+            "version": "v1.2.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhayann/framework.git",
-                "reference": "7d1e2f9bb9e8a5c53c3407728f55151baa50c3cf"
+                "reference": "6969a9bfeb53a511937c52c9bdf980f4a0111d02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhayann/framework/zipball/7d1e2f9bb9e8a5c53c3407728f55151baa50c3cf",
-                "reference": "7d1e2f9bb9e8a5c53c3407728f55151baa50c3cf",
+                "url": "https://api.github.com/repos/jhayann/framework/zipball/6969a9bfeb53a511937c52c9bdf980f4a0111d02",
+                "reference": "6969a9bfeb53a511937c52c9bdf980f4a0111d02",
                 "shasum": ""
             },
             "require": {
@@ -99,8 +99,8 @@
             "authors": [
                 {
                     "name": "Rey Jhon A. Baquirin",
-                    "email": "reyjhonbaquirin@yahoo.com",
-                    "role": "Creator"
+                    "role": "Creator",
+                    "email": "reyjhonbaquirin@yahoo.com"
                 }
             ],
             "description": "The Simple PHP is lightweight web application framework.",
@@ -109,7 +109,7 @@
                 "framework",
                 "simplephp"
             ],
-            "time": "2019-07-18T11:55:15+00:00"
+            "time": "2019-07-20T12:51:32+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
