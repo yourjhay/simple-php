@@ -225,6 +225,33 @@ Read documentation at https://github.com/jhayann/simple-php/blob/master/validati
 # Database Query
 Read documentation at https://github.com/jhayann/simple-php/blob/master/queryBuilder.md
 
+# Simply Cryptography 
+Simply Framework offers encryption library using a KEY. This uses defuse/php-encryption you can read more at https://github.com/defuse/php-encryption
+
+Before using encryption please run this command **ONCE**:
+```
+php cli key:generate
+```
+## Encryption
+To encryp a text or string:
+```php
+use Simple\Security\SimplyEncrypt;
+```
+Then you can use is as:
+```php
+$encrypted = SimplyEncrypt::encrypt('secret text');
+```
+## Decryption
+To decrypt a text or string:
+```php
+use Simple\Security\SimplyDecrypt;
+```
+Then you can use is as:
+```php
+$decrypted = SimplyDecrypt::decrypt($ciphertext);
+```
+
+
 ## Documentation will be updated soon... 
 
 
