@@ -46,5 +46,4 @@ if(ERROR_HANDLER === 'simply') {
  * Application routes
  */
 require '../app/Routes.php';
-use Simple\Routing\Router;
-Router::dispatch($url);
+Simple\Routing\Router::dispatch($url);
