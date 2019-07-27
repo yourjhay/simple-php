@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use function Simple\view;
 
-class Home extends Controller 
+class HomeController extends Controller
 {
 
     public function index() 
