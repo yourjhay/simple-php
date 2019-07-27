@@ -95,10 +95,11 @@ Router::set('home',[
 
 Parameters can be pass as **_variables_** along with the URL:
 ```php
-Router::set('{controller:home}',[
- 'action'=>'index' 
+Router::set('users/{action}',[
+   'controller' => 'UserController'
 ]);
 ```
+
 if you want to specify the controller/method in the url:
 
 Example: thesimplephp.com/**controller**/**method**
@@ -106,6 +107,23 @@ Example: thesimplephp.com/**controller**/**method**
 Router::set('{controller}/{action}');
 ```
 Simple will automatically find the controller and method to run.
+
+Route Optional Parameters: (just add ? to the route variable eg: {id?} 
+```php
+Router::set('product/{id?}',[
+   'controller' => 'ProductController',
+   'action' => 'someAction'
+]);
+```
+
+When specifying controller:
+```
+'controller' => 'user'
+```
+is the same as 
+```
+'controller' => 'UserController'
+```
 
 The **_namespace_** parameter tell the router where too look for that controller in the namespace given.
 ```php
@@ -123,7 +141,10 @@ And your directory should look like this:
 
 Passing Parameters from url to the router. Eg. id,name,prodct etc.
 ```php
-Router::set('{controller:users}/{action:show}/{id:\w+}',[
+Router::set('users/show/{id:\w+}',[
+   'controller' => 'user',
+   'action' => 'show'
+]);
 ```
 
 on the variable id, to be able to accept letters and numbers, you need to set the regex(regular expression).
@@ -141,6 +162,22 @@ example:
 - **\bSHOW|\bEDIT|\bUPDATE** accepts _show_, _edit_ and _update_ (case insensitive).
 - You can set your own regex.
 
+## Route Resource
+Simply has a route resource that address CRUD in a controller. Instead of declaring mutltiple route for CRUD in a controller
+just declare a route resource for your controller.
+ ```php
+Router::resource('products','ProductController'); 
+// you may ommit the word Controller by just using **product** instead of **ProductController**
+ ```
+ **Actions Handle by Route Resource**
+- /products - uses *index*
+- /products/create - uses *create*
+- /products/store - uses *store*
+- /products/show/{id} - uses *show*
+- /products/edit/{id} - uses *edit*
+- /products/update/{id} - uses *update*
+- /products/destroy/{id} - uses *destroy*
+ 
 ## USING CLI for _Controller_ & _Model_
 
 Simply PHP has a CLI utility.
