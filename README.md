@@ -44,10 +44,10 @@ php cli serve 127.0.0.1 port=8000
 then you can now navigate _localhost:8000_ to to your browser. Awesome!
 
 You need a mysql server if your app need to communicate with database. I recommend xampp for windows.
-# Using the Simple Framework
+# Using the Simply Framework
 
 ## configuration:
-Configuraion file is located at: App/Config/global.php
+Configuraion file is located at: app/Config/global.php
 ```md
 -
 |-app
@@ -193,6 +193,7 @@ php cli make:model ModelName
 ```
 
 ## Using CLI for importing database tables(mysql)
+Note: Mysql needs to be be in the environment variable for this to work.
 
 To import users table included in the framework:
 ```
@@ -232,12 +233,12 @@ Then add this to 'App/Controllers/Controller.php':
 use App\Helper\Auth\AuthHelper as auth;
 use Simple\Request as r;
 ```
-And create a new method _before_ like this:
+And create a new method _before_ in *Controller.php* like this:
 ```php
     public function before()
     {
         if(!auth::user()) {
-            r::redirect('/auth/index');
+           Simple\Request::redirect('/auth/index');
         }
     }
 ```
