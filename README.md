@@ -231,14 +231,14 @@ public function indexAction()
 Then add this to 'App/Controllers/Controller.php':
 ```php
 use App\Helper\Auth\AuthHelper as auth;
-use Simple\Request as r;
+use Simple\Request;
 ```
 And create a new method _before_ in *Controller.php* like this:
 ```php
     public function before()
     {
         if(!auth::user()) {
-           Simple\Request::redirect('/auth/index');
+           Request::redirect('/auth/index');
         }
     }
 ```
