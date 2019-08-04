@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "simplyphp/framework",
-            "version": "v1.2.33",
+            "version": "v1.2.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhayann/framework.git",
-                "reference": "599ec20a561a23e0c60b20bd0495d531d5fa7ac9"
+                "reference": "f46cf342691a073c674413829b0ce637fea12462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhayann/framework/zipball/599ec20a561a23e0c60b20bd0495d531d5fa7ac9",
-                "reference": "599ec20a561a23e0c60b20bd0495d531d5fa7ac9",
+                "url": "https://api.github.com/repos/jhayann/framework/zipball/f46cf342691a073c674413829b0ce637fea12462",
+                "reference": "f46cf342691a073c674413829b0ce637fea12462",
                 "shasum": ""
             },
             "require": {
@@ -37,7 +37,8 @@
             "autoload": {
                 "files": [
                     "src/Simple/functions.php",
-                    "src/Simple/QueryBuilder/functions.php"
+                    "src/Simple/QueryBuilder/functions.php",
+                    "src/Simple/ViewRenderer.php"
                 ],
                 "psr-4": {
                     "Simple\\": "src/Simple"
@@ -61,7 +62,7 @@
                 "php framework",
                 "simplyphp"
             ],
-            "time": "2019-08-03T06:48:12+00:00"
+            "time": "2019-08-04T04:02:28+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
