@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "simplyphp/framework": "1.2.*"
+        "simplyphp/framework": "1.2.*",
+        "php": ">=7.1"
     },
     "autoload": {
         "psr-4": {

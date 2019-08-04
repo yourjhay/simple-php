@@ -4,89 +4,40 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b00af14c071d9f2d24795afc811b778",
+    "content-hash": "fc180d0f17b1bd127d64ae7b89ef9490",
     "packages": [
         {
-            "name": "latitude/latitude",
-            "version": "3.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/shadowhand/latitude.git",
-                "reference": "8f8e6e42f81cbbad44bf550405d7444da6f09dc5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/shadowhand/latitude/zipball/8f8e6e42f81cbbad44bf550405d7444da6f09dc5",
-                "reference": "8f8e6e42f81cbbad44bf550405d7444da6f09dc5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "eloquent/liberator": "^2.0",
-                "hoa/devtools": "^1.17",
-                "hoa/ruler": "2.17.05.16",
-                "phpstan/phpstan": "^0.9.1",
-                "phpunit/phpunit": "^6.0",
-                "vimeo/psalm": "^0.3.88"
-            },
-            "suggest": {
-                "hoa/ruler": "Adds support for creating criteria from strings"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "Latitude\\QueryBuilder\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Woody Gilk",
-                    "email": "woody.gilk@gmail.com",
-                    "homepage": "https://github.com/shadowhand"
-                }
-            ],
-            "description": "A SQL query builder with zero dependencies",
-            "time": "2019-02-04T14:25:02+00:00"
-        },
-        {
             "name": "simplyphp/framework",
-            "version": "v1.2.32",
+            "version": "v1.2.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhayann/framework.git",
-                "reference": "c8362803eb2e0af26f126caef1f0fa56092820a4"
+                "reference": "599ec20a561a23e0c60b20bd0495d531d5fa7ac9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhayann/framework/zipball/c8362803eb2e0af26f126caef1f0fa56092820a4",
-                "reference": "c8362803eb2e0af26f126caef1f0fa56092820a4",
+                "url": "https://api.github.com/repos/jhayann/framework/zipball/599ec20a561a23e0c60b20bd0495d531d5fa7ac9",
+                "reference": "599ec20a561a23e0c60b20bd0495d531d5fa7ac9",
                 "shasum": ""
             },
             "require": {
-                "latitude/latitude": "^3.3",
+                "php": ">=7.1",
+                "symfony/var-dumper": "^4.3",
                 "twig/twig": "^2.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.5|^8.0"
             },
             "suggest": {
-                "filp/whoops": "Install this to have a pretty page for error like laravel",
+                "filp/whoops": "Install this to have a pretty page for errors.",
                 "intervention/image": "To handle Image processing in this micro framework",
                 "phpmailer/phpmailer": "For handling emails and provide extensible features"
             },
             "type": "library",
             "autoload": {
                 "files": [
-                    "src/Simple/functions.php"
+                    "src/Simple/functions.php",
+                    "src/Simple/QueryBuilder/functions.php"
                 ],
                 "psr-4": {
                     "Simple\\": "src/Simple"
@@ -99,17 +50,18 @@
             "authors": [
                 {
                     "name": "Rey Jhon A. Baquirin",
-                    "role": "Creator",
+                    "role": "Magic Programmer",
                     "email": "reyjhonbaquirin@yahoo.com"
                 }
             ],
-            "description": "The Simple PHP is lightweight web application framework.",
+            "description": "The Simply PHP is lightweight web application framework.",
             "homepage": "https://gitlab.com/jhayann/simple",
             "keywords": [
-                "framework",
-                "simplephp"
+                "micro framework",
+                "php framework",
+                "simplyphp"
             ],
-            "time": "2019-07-27T15:49:23+00:00"
+            "time": "2019-08-03T06:48:12+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -229,6 +181,137 @@
             "time": "2019-02-06T07:57:58+00:00"
         },
         {
+            "name": "symfony/polyfill-php72",
+            "version": "v1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php72.git",
+                "reference": "ab50dcf166d5f577978419edd37aa2bb8eabce0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/ab50dcf166d5f577978419edd37aa2bb8eabce0c",
+                "reference": "ab50dcf166d5f577978419edd37aa2bb8eabce0c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php72\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "symfony/var-dumper",
+            "version": "v4.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "e4110b992d2cbe198d7d3b244d079c1c58761d07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/e4110b992d2cbe198d7d3b244d079c1c58761d07",
+                "reference": "e4110b992d2cbe198d7d3b244d079c1c58761d07",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php72": "~1.5"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0",
+                "symfony/console": "<3.4"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "symfony/console": "~3.4|~4.0",
+                "symfony/process": "~3.4|~4.0",
+                "twig/twig": "~1.34|~2.4"
+            },
+            "suggest": {
+                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
+                "ext-intl": "To show region name in time zone dump",
+                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
+            },
+            "bin": [
+                "Resources/bin/var-dump-server"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\VarDumper\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony mechanism for exploring and dumping PHP variables",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "time": "2019-07-27T06:42:46+00:00"
+        },
+        {
             "name": "twig/twig",
             "version": "v2.11.3",
             "source": {
@@ -273,19 +356,19 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
+                    "role": "Lead Developer",
                     "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "homepage": "http://fabien.potencier.org"
                 },
                 {
                     "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
+                    "role": "Project Founder",
+                    "email": "armin.ronacher@active-4.com"
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "https://twig.symfony.com/contributors",
-                    "role": "Contributors"
+                    "role": "Contributors",
+                    "homepage": "https://twig.symfony.com/contributors"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
@@ -302,6 +385,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.1"
+    },
     "platform-dev": []
 }
