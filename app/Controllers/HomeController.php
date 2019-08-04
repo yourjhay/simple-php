@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use function Simple\view;
-
 class HomeController extends Controller
 {
 
