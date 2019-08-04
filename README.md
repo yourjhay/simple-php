@@ -25,6 +25,9 @@ http://simply-framework.herokuapp.com/
 - [Twig Template Engine](https://twig.symfony.com)
 - [Latitude Query Builder](https://github.com/shadowhand/latitude)
 
+# Coding Style Guide
+You must follow this standard: https://www.php-fig.org/psr/psr-2/ HAPPY CODING :)
+
 # Installation
 Via Composer: (recommended) 
 ```
