@@ -289,7 +289,11 @@ Then you can use is as:
 $decrypted = SimplyDecrypt::decrypt($ciphertext);
 ```
 
-
+## DUMPING VARIABLES
+in replace of var_dump, use *dump* instead.
+```php
+dump($var)
+```
 ## Documentation will be updated soon... 
 
 
