@@ -298,6 +298,24 @@ Read documentation at https://github.com/jhayann/simple-php/blob/master/validati
 # Database Query
 Read documentation at https://github.com/jhayann/simple-php/blob/master/queryBuilder.md
 
+# File Upload (on development)
+Using the file upload object in controller
+
+Example in your store action:
+```php
+public function store(Request $request)
+{
+   $file = $request->file('profile_photo'); // profile_photo is the field name of the input type="file" element
+   $file->upload('folder_name'); // specify the folder where the file is going to store, if upload success it wil return true otherwise false.
+}
+```
+**Available Methods:**
+- getFileName() returns the filename of the uploaded file
+- getFileSize() returns the size of the uploader file
+- getFileExtension() returns the extension of the uploaded file
+- getFileType() returns the file type of the uploaded file
+- upload($path) upload to specified path
+
 # Simply Cryptography 
 Simply Framework offers encryption library using a KEY. This uses defuse/php-encryption you can read more at https://github.com/defuse/php-encryption
 
