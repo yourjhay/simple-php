@@ -311,11 +311,12 @@ public function store(Request $request)
 }
 ```
 **Available Methods:**
-- getFileName() returns the filename of the uploaded file
-- getFileSize() returns the size of the uploader file
-- getFileExtension() returns the extension of the uploaded file
-- getFileType() returns the file type of the uploaded file
-- upload($path) upload to specified path
+- *getFileName()* returns the original filename of the uploaded file
+- *getUploadedFileName()* returns the filename of the file when uploaded.
+- *getFileSize()* returns the size of the uploaded file
+- *getFileExtension()* returns the extension of the uploaded file
+- *getFileType()* returns the file type of the uploaded file
+- *upload($path)* upload to specified path
 
 # Simply Cryptography 
 Simply Framework offers encryption library using a KEY. This uses defuse/php-encryption you can read more at https://github.com/defuse/php-encryption
