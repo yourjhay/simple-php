@@ -214,6 +214,38 @@ if you're promt to enter a password (Enter mysql server password)
 
 You will be promt to enter the following fields: _name, email and password_.
 
+# VIEWS
+This micro framework uses twig for the template engine. But it is *OPTIONAL*. Yes, you can use the plain html only without using twig.
+
+- views must be located at *app/Views* directory.
+- all views must be name with suffix *view* before the file extension.
+   eg: *welcome.**view**.html*, *product.**view**.html*
+- view cache can be enable or disable in the application config
+
+## When rendering a view: (uses twig)
+```php
+return view('welcome');
+```
+when a view is inside a folder, include the *folder* then *view name* separated by *period*
+```php
+return view('your_folder.welcome');
+```
+Please read the twig documentation for more information:
+https://twig.symfony.com/doc/2.x/
+
+**NOTE:** 
+- You views must be a valid html file. eg: *welcome.view.html*
+- layout files can be be a twig file. eg: *layout.twig*, *master.twig*
+
+## When rendering normal view: (plain html)
+
+Pass a second parameter *normal* to recognize it that you want to render without template engine.
+```php
+return view('welcome', 'normal');
+```
+**NOTE:** 
+- You views must be a valid php file. eg: *welcome.view.php*
+- normal rendering doesn't support inheretance
 
 # Authentication
 Simply PHP provides a quick way to scaffold all of the routes and views you need for authentication using one simple command:
