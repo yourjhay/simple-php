@@ -239,13 +239,14 @@ https://twig.symfony.com/doc/2.x/
 
 ## When rendering normal view: (plain html)
 
-Pass a second parameter *normal* to recognize it that you want to render without template engine.
+Pass a third parameter *normal* to recognize it that you want to render without template engine.
 ```php
-return view('welcome', 'normal');
+return view('welcome', [], 'normal');
 ```
 **NOTE:** 
 - You views must be a valid php file. eg: *welcome.view.php*
 - normal rendering doesn't support inheretance
+- Second parameter is the variables you want to passed. If empty, it must be initialize when rendering normal view.
 
 # Authentication
 Simply PHP provides a quick way to scaffold all of the routes and views you need for authentication using one simple command:
