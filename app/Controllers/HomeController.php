@@ -12,8 +12,7 @@ class HomeController extends Controller
          * Documentation: https://twig.symfony.com/doc/2.x/api.html
          * 
          * if you want to render view without template engine
-         * use view::renderNormal('viewname',array()) or 
-         * return view('view.name',$data,'normal')
+         * return view('view.name',[var1=>'value1'],'normal')
          */
         return view('home.index',[
             'name'        => APP_NAME,
