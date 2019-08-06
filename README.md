@@ -95,6 +95,10 @@ Router::set('home',[
   'action'     => 'index'
 ]);
 ```
+Or short hand:
+```php
+Router::set('{controller:home}/{action:index}');
+```
 
 Parameters can be pass as **_variables_** along with the URL:
 ```php
