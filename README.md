@@ -351,7 +351,7 @@ $decrypted = SimplyDecrypt::decrypt($ciphertext);
 ## DUMPING VARIABLES
 in replace of var_dump, use *dump* instead.
 ```php
-dump($var)
+dd($var)
 ```
 ## Documentation will be updated soon... 
 
