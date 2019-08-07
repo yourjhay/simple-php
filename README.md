@@ -17,13 +17,12 @@ The Simple PHP is lightweight web application micro framework.
 - Error Handling and Reporting
 - Easily manage dependency using composer
 
-## Demo
-http://simply-framework.herokuapp.com/
+## DOCUMENTATION
+https://simply-docs.herokuapp.com
 
 
 # Simple PHP dependencies
 - [Twig Template Engine](https://twig.symfony.com)
-- [Latitude Query Builder](https://github.com/shadowhand/latitude)
 
 # Coding Style Guide
 You must follow this standard: https://www.php-fig.org/psr/psr-2/ HAPPY CODING :)
@@ -34,189 +33,6 @@ Via Composer: (recommended)
 composer create-project reyjhon/simple-php
 cd simple-php
 ```
-
-# Serving Simple-PHP
-PHP-simple doesn't need a real web server to run when in development(experimental).
-```
-php cli serve
-```
-or define host and port:
-```
-php cli serve 127.0.0.1 port=8000
-```
-then you can now navigate _localhost:8000_ to to your browser. Awesome!
-
-You need a mysql server if your app need to communicate with database. I recommend xampp for windows.
-# Using the Simply Framework
-
-## configuration:
-Configuraion file is located at: app/Config/global.php
-```md
--
-|-app
-   '-|Config
-       '-|global.php
-```
-## Directory Structure:
-```md
-The root directory:
-|-app
-    The App directory:
-    '-|Config
-    '-|Controllers
-    '-|Helper
-    '-|Model
-    '-|Views
-|-database
-|-public
-|-simply
-|-vendor
-```
-**The App directory:**
-- **Config**: This is the folder where the application configuration is located. You can create your own.
-- **Controllers:** The _Controllers_ DIR contains all your application controllers. 
-- **Helper:** You can create your own class helper in this folder.
-- **Model:** All your application models must be place in here.Simple use Models to communicate with the database.
-- **Views:** Your Frontend is located here. All html, php files needed for presentation.
-- 
-**The root Directory**
-- **App:** Most of your application logic is here. Eg.Controllers, Models & Views.
-- **database:** put your sql files here.
-- **public:** The _public_ DIR contains the index.php as the central entry point and front controller of the framework.
-- **simply:** Contains logs and cache of your application. This is generated when needed
-- **vendor:** Contains all your composer dependencies.
-
-# The Basics
-## Routing
-The basic url route accepts **_url_**. and parameters: **_controller_**, **_action_**, **_namespace_**:
-```php
-Router::set('home',[
-  'controller' => 'home',
-  'action'     => 'index'
-]);
-```
-Or short hand:
-```php
-Router::set('{controller:home}/{action:index}');
-```
-
-Parameters can be pass as **_variables_** along with the URL:
-```php
-Router::set('users/{action}',[
-   'controller' => 'UserController'
-]);
-```
-
-if you want to specify the controller/method in the url:
-
-Example: thesimplephp.com/**controller**/**method**
-```php
-Router::set('{controller}/{action}');
-```
-Simple will automatically find the controller and method to run.
-
-Route Optional Parameters: (just add ? to the route variable eg: {id?} 
-```php
-Router::set('product/{id?}',[
-   'controller' => 'ProductController',
-   'action' => 'someAction'
-]);
-```
-
-When specifying controller:
-```
-'controller' => 'user'
-```
-is the same as 
-```
-'controller' => 'UserController'
-```
-
-The **_namespace_** parameter tell the router where too look for that controller in the namespace given.
-```php
-Router::set('admin/{controller}/{action}',[
-  'namespace' => 'Admin'
-]);
-```
-And your directory should look like this:
-```md
-|-App
-    '-|Controllers
-        '-|Admin
-            '-YourController.php
-```
-
-Passing Parameters from url to the router. Eg. id,name,prodct etc.
-```php
-Router::set('users/show/{id:\w+}',[
-   'controller' => 'user',
-   'action' => 'show'
-]);
-```
-
-on the variable id, to be able to accept letters and numbers, you need to set the regex(regular expression).
-
-BY default variable only accepts letters.
-
-example: 
-```php
-{variableName: regex}
-```
-- **[a-z0-9]+(?:-[a-z0-9]+)*$**   Valid Slug eg: news-report-2019
-- **_\w+_**   accepts _letters_ and _numbers_
-- **_\d+_**   accepts only _numbers_
-- **show** accepts _show_ only
-- **\bSHOW|\bEDIT|\bUPDATE** accepts _show_, _edit_ and _update_ (case insensitive).
-- You can set your own regex.
-
-## Route Resource
-Simply has a route resource that address CRUD in a controller. Instead of declaring mutltiple route for CRUD in a controller
-just declare a route resource for your controller.
- ```php
-Router::resource('products','ProductController'); 
-// you may ommit the word Controller by just using **product** instead of **ProductController**
- ```
- **Actions Handle by Route Resource**
-- /products - uses *index*
-- /products/create - uses *create*
-- /products/store - uses *store*
-- /products/show/{id} - uses *show*
-- /products/edit/{id} - uses *edit*
-- /products/update/{id} - uses *update*
-- /products/destroy/{id} - uses *destroy*
- 
-## USING CLI for _Controller_ & _Model_
-
-Simply PHP has a CLI utility.
-
-To create a controller:
-```
-php cli make:controller ControllerName
-```
-
-To create a model:
-```
-php cli make:model ModelName
-```
-
-## Using CLI for importing database tables(mysql)
-Note: Mysql needs to be be in the environment variable for this to work.
-
-To import users table included in the framework:
-```
-php cli migrate users
-```
-Additionaly you can import your own .sql file (just put in the database DIR) then:
-```
-php cli migrate yourSqlFilename
-```
-Inserting data to users table using cli:
-```
-php cli user:seed
-```
-if you're promt to enter a password (Enter mysql server password)
-
-You will be promt to enter the following fields: _name, email and password_.
 
 # VIEWS
 This micro framework uses twig for the template engine. But it is *OPTIONAL*. Yes, you can use the plain html only without using twig.
@@ -252,11 +68,6 @@ return view('welcome', [], 'normal');
 - normal rendering doesn't support inheretance
 - Second parameter is the variables you want to passed. If empty, it must be initialize when rendering normal view.
 
-# Authentication
-Simply PHP provides a quick way to scaffold all of the routes and views you need for authentication using one simple command:
-```
-php cli make:auth
-```
 ### restrict controller to authenticated users only
 add the _Action_ suffix into your method name.  
 
