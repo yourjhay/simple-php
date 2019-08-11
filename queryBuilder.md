@@ -17,10 +17,10 @@ $query = parent::factory()
 /**
 *  $query->sql(); - SELECT * FROM "users" LIMIT 100 
 *  $query->params() - Parameters if available */
-
-        $stmt = static::DB()->prepare($query->sql());
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+/**
+* Now to run this query you may use the run function.
+*/
+self::run($query);
 ```
 Specific columns can be selected:
 ```php
