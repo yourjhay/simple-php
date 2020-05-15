@@ -2,7 +2,7 @@
     "name": "reyjhon/simple-php",
     "description": "The Simple PHP is lightweight web application framework.",
     "keywords": ["framework", "simplephp", "simply"],
-    "homepage": "https://gitlab.com/jhayann/simple",
+    "homepage": "https://simply-docs.herokuapp.com/",
     "license": "MIT",
     "type": "project",
     "authors": [
