@@ -1,15 +1,17 @@
 <?php
-/**
- * Application Configuration Settings
+/**----------------------------------------------------------------------
+ *  Application Configuration Settings
+ *  docs: https://simply-docs.herokuapp.com/
+ * -----------------------------------------------------------------------
  */
-define('APP_NAME','Simply PHP',true);
-define('APP_DESCRIPTION','The "Simply-PHP" Framework',true);
-define('BASEURL','',true);
+define('APP_NAME', 'Simply PHP');
+define('APP_DESCRIPTION', 'The "Simply-PHP" Framework');
+define('BASEURL', '');
 define('APP_KEY', '');
 
 /**
  * Error handling behaviour
- * Set to false in production
+ * NOTE: Set to false in production
  */
 define('SHOW_ERRORS', true);
 
@@ -20,18 +22,25 @@ define('SHOW_ERRORS', true);
  *  **IF you set whoops as default ERROR_HANDLER you need to install it.
  *    run: composer require filp/whoops
  */
-define('ERROR_HANDLER','simply', true);
+define('ERROR_HANDLER', 'simply');
 
 /**
  * Template Engine configuration
  */
-define('CACHE_VIEWS', false , true);
+define('CACHE_VIEWS', false);
 
-/**
+/**------------------------------------------------------------------
  * Database configuration settings
+ * -------------------------------------------------------------------
  */
-define('DBENGINE','mysql');
-define('DBSERVER', 'localhost',true);
-define('DBUSER', 'root', true);
-define('DBPASS', '', true);
-define('DBNAME','simply', true);
+
+ /**
+  * DBENGINE - The database engine you're going to use
+  * options: mysql or mysqli, postgres, sqlserver, common, basic, sqlite.
+  */
+define('DBENGINE', 'mysql');
+
+define('DBSERVER', 'localhost');
+define('DBUSER', 'root');
+define('DBPASS', '');
+define('DBNAME','simply');
