@@ -4,7 +4,7 @@
 | The Simple PHP Framework v1.2
 | @reyjhonbaquirin - June 09 2019
 | License MIT
-| 
+| docs: https://simply-docs.herokuapp.com
 | *** FRONT CONTROLLER ***
 ------------------------------------------------------------------*/
 
@@ -36,10 +36,13 @@ error_reporting(E_ALL);
 if(ERROR_HANDLER === 'simply') {
     set_error_handler('Simple\Error::errorHandler');
     set_exception_handler('Simple\Error::exceptionHandler');
-} elseif (ERROR_HANDLER === 'whoops') {
+} elseif (ERROR_HANDLER === 'whoops' && SHOW_ERRORS == true) {
     $whoops = new \Whoops\Run;
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
     $whoops->register();
+} else {
+    set_error_handler('Simple\Error::errorHandler');
+    set_exception_handler('Simple\Error::exceptionHandler');
 }
 
 /**
