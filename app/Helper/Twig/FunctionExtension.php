@@ -20,7 +20,8 @@ class FunctionExtension extends AbstractExtension
              * it the twig template.
              * new TwigFunction($function_name_to_be_called_in_template, [$callable, method_name])
              */
-            new TwigFunction('phpinfo', [$this,'phpinfo']),        
+            new TwigFunction('phpinfo', [$this,'phpinfo']),    
+            new TwigFunction('alias', [$this,'alias']),          
             
         ];
     }
@@ -32,6 +33,14 @@ class FunctionExtension extends AbstractExtension
     public function phpinfo()
     {
         return phpinfo();
+    }
+
+    /**
+     * To call aliases in your views eg: alias('route.alias')
+     */
+    public function alias($var, $param=null)
+    {
+        return alias($var, $param);
     }
 
 }
