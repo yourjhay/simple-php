@@ -4,6 +4,7 @@ namespace App\Helper\Twig;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use function Simple\alias;
 
 class FunctionExtension extends AbstractExtension
 {
