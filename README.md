@@ -10,7 +10,7 @@ The Simple PHP is lightweight web application micro framework.
 - Simple Routing engine
 - Using namespace in classes with autoloading
 - Controllers with method filters
-- Elegant Syntax
+- Applying PSR-12 Extended Coding Standard
 - Uses Twig Template Engine (optional)
 - Models with resource-friendly connectivity
 - Evironment Configuration
