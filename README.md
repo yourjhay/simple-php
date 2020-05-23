@@ -109,10 +109,10 @@ If the user is authenticated the user variable is not null.:
 - {{ user.id }} display ID of current logged in user.
 
 # Validation
-Read documentation at https://github.com/jhayann/simple-php/blob/master/validation.md
+Read documentation at https://simply-docs.herokuapp.com/documentation/v1/lib/validation
 
 # Database Query
-Read documentation at https://github.com/jhayann/simple-php/blob/master/queryBuilder.md
+Read documentation at https://simply-docs.herokuapp.com/documentation/v1/lib/querybuilder
 
 # File Upload (on development)
 Using the file upload object in controller
