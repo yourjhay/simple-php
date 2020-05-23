@@ -8,7 +8,6 @@ use function Simple\alias;
 
 class FunctionExtension extends AbstractExtension
 {
-
     /**
      * Extension for twig functions
      * Read Documentation at: https://twig.symfony.com/doc/2.x/advanced.html
@@ -25,7 +24,6 @@ class FunctionExtension extends AbstractExtension
             new TwigFunction('alias', [$this,'alias']),
         ];
     }
-    
 
     /**
      * Methods for Twig Functions
@@ -42,5 +40,4 @@ class FunctionExtension extends AbstractExtension
     {
         return alias($var, $param);
     }
-
 }
