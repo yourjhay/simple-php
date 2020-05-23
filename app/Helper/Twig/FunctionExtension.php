@@ -4,6 +4,7 @@ namespace App\Helper\Twig;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use function Simple\alias;
 
 class FunctionExtension extends AbstractExtension
 {
@@ -21,8 +22,7 @@ class FunctionExtension extends AbstractExtension
              * new TwigFunction($function_name_to_be_called_in_template, [$callable, method_name])
              */
             new TwigFunction('phpinfo', [$this,'phpinfo']),    
-            new TwigFunction('alias', [$this,'alias']),          
-            
+            new TwigFunction('alias', [$this,'alias']),
         ];
     }
     
