@@ -40,4 +40,5 @@ class FunctionExtension extends AbstractExtension
     {
         return alias($var, $param);
     }
+
 }
