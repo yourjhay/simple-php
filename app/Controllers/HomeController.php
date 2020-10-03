@@ -1,9 +1,9 @@
 <?php
+
 namespace App\Controllers;
 
 class HomeController extends Controller
 {
-
     public function index() 
     {
         /**
@@ -17,6 +17,5 @@ class HomeController extends Controller
             'name'        => APP_NAME,
             'description' => APP_DESCRIPTION
         ]);
-
     }
 }

@@ -5,9 +5,9 @@ namespace App\Helper\Twig;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use function Simple\alias;
+
 class FunctionExtension extends AbstractExtension
 {
-
     /**
      * Extension for twig functions
      * Read Documentation at: https://twig.symfony.com/doc/2.x/advanced.html
@@ -21,11 +21,9 @@ class FunctionExtension extends AbstractExtension
              * new TwigFunction($function_name_to_be_called_in_template, [$callable, method_name])
              */
             new TwigFunction('phpinfo', [$this,'phpinfo']),    
-            new TwigFunction('alias', [$this,'alias']),          
-            
+            new TwigFunction('alias', [$this,'alias']),
         ];
     }
-    
 
     /**
      * Methods for Twig Functions

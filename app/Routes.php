@@ -5,4 +5,4 @@
  */
 use Simple\Routing\Router;
 
-Router::get('',['controller' => 'home', 'action' => 'index']);
+Router::get('','home@index');

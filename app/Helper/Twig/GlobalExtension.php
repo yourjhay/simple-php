@@ -7,12 +7,10 @@ use \Twig\Extension\GlobalsInterface;
 
 class GlobalExtension extends AbstractExtension implements GlobalsInterface
 {
-
     public function getGlobals()
     {
         return [
             'text' => 'sample text',
         ];
     }
-
 }

@@ -13,12 +13,18 @@
         }
     ],
     "require": {
-        "simplyphp/framework": "1.2.*",
+        "simplyphp/framework": "v1.2.*",
         "php": ">=7.1"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/"
         }
-    }
+    }, 
+
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
