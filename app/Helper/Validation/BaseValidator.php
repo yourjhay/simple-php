@@ -158,7 +158,7 @@ class BaseValidator
         $lang_file_location = __DIR__.DIRECTORY_SEPARATOR.'lang'.DIRECTORY_SEPARATOR.$lang.'.php';
 
         if (!EnvHelpers::file_exists($lang_file_location)) {
-             throw new Exception(sprintf("'%s' language is not supported.", $lang));
+             throw new \Exception(sprintf("'%s' language is not supported.", $lang));
         }
 
         $this->lang = $lang;
@@ -250,7 +250,7 @@ class BaseValidator
     public static function add_validator(string $rule, callable $callback, string $error_message)
     {
         if (method_exists(__CLASS__, self::validator_to_method($rule)) || isset(self::$validation_methods[$rule])) {
-            throw new Exception(sprintf("'%s' validator is already defined.", $rule));
+            throw new \Exception(sprintf("'%s' validator is already defined.", $rule));
         }
 
         self::$validation_methods[$rule] = $callback;
@@ -269,7 +269,7 @@ class BaseValidator
     public static function add_filter(string $rule, callable $callback)
     {
         if (method_exists(__CLASS__, self::filter_to_method($rule)) || isset(self::$filter_methods[$rule])) {
-            throw new Exception(sprintf("'%s' filter is already defined.", $rule));
+            throw new \Exception(sprintf("'%s' filter is already defined.", $rule));
         }
 
         self::$filter_methods[$rule] = $callback;
@@ -649,7 +649,7 @@ class BaseValidator
                 : true;
         }
 
-        throw new Exception(sprintf("'%s' validator does not exist.", $rule));
+        throw new \Exception(sprintf("'%s' validator does not exist.", $rule));
     }
 
     /**
@@ -680,7 +680,7 @@ class BaseValidator
             return call_user_func($rule, $value, ...$rule_params);
         }
 
-        throw new Exception(sprintf("'%s' filter does not exist.", $rule));
+        throw new \Exception(sprintf("'%s' filter does not exist.", $rule));
     }
 
     /**
@@ -781,7 +781,7 @@ class BaseValidator
             return $messages[$rule];
         }
 
-        throw new Exception(sprintf("'%s' validator does not have an error message.", $rule));
+        throw new \Exception(sprintf("'%s' validator does not have an error message.", $rule));
     }
 
     /**
@@ -1969,7 +1969,7 @@ class BaseValidator
         $result = json_decode($json);
 
         if (!isset($result->reason)) {
-            throw new Exception('Twitter JSON response changed. Please report this on GitHub.');
+            throw new \Exception('Twitter JSON response changed. Please report this on GitHub.');
         }
 
         return $result->reason === "taken";
