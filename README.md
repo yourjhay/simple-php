@@ -17,7 +17,7 @@ The Simple PHP is lightweight web application micro framework.
 - Error Handling and Reporting
 - Easily manage dependency using composer
 
-## DOCUMENTATION
+## FULL DOCUMENTATION
 https://simply-docs.herokuapp.com
 
 
