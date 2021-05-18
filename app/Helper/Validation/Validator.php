@@ -21,6 +21,7 @@ class Validator extends BaseValidator
         self::set_error_messages(array(
             "unique"    =>  "{field} is already Taken.",
         ));
+        $param = explode('.',$param);
         $call = Model::unique_checker($param, $field, $input[$field]);
         if(!$call) {
             return;
