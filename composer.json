@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "simplyphp/framework": "v1.2.*",
+        "simplyphp/framework": "v2.0.*",
         "php": "^7.4|^8.0"
     },
     "autoload": {
