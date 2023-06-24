@@ -7,7 +7,7 @@ use \Twig\Extension\GlobalsInterface;
 
 class GlobalExtension extends AbstractExtension implements GlobalsInterface
 {
-    public function getGlobals()
+    public function getGlobals(): array
     {
         return [
             'text' => 'sample text',

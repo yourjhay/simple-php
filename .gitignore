@@ -4,3 +4,4 @@ vendor/
 Simply/
 .idea/
 node_modules/
+composer.lock
