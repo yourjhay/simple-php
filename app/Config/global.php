@@ -44,3 +44,4 @@ define('DBSERVER', 'localhost');
 define('DBUSER', 'root');
 define('DBPASS', '');
 define('DBNAME','simply');
+define('DBTESTMODE',false);
