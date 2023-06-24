@@ -15,7 +15,8 @@ class HomeController extends Controller
          */
         return view('home.index',[
             'name'        => APP_NAME,
-            'description' => APP_DESCRIPTION
+            'description' => APP_DESCRIPTION,
+            'version' => phpversion()
         ]);
     }
 }
