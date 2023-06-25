@@ -2,9 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\User;
-use App\Observers\UserObserver;
- 
 class EventServiceProvider {
     
     /**
