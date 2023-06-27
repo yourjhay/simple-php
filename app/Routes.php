@@ -5,4 +5,4 @@
  */
 use Simple\Routing\Router;
 
-Router::get('','home@index');
+Router::get('/','home@index');
