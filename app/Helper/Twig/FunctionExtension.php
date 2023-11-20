@@ -4,7 +4,7 @@ namespace App\Helper\Twig;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
-use function Simple\alias;
+
 
 class FunctionExtension extends AbstractExtension
 {
@@ -12,7 +12,7 @@ class FunctionExtension extends AbstractExtension
      * Extension for twig functions
      * Read Documentation at: https://twig.symfony.com/doc/2.x/advanced.html
      */
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             /**
@@ -20,7 +20,7 @@ class FunctionExtension extends AbstractExtension
              * it the twig template.
              * new TwigFunction($function_name_to_be_called_in_template, [$callable, method_name])
              */
-            new TwigFunction('phpinfo', [$this,'phpinfo']),    
+            new TwigFunction('phpinfo', [$this,'phpinfo']),
             new TwigFunction('alias', [$this,'alias']),
         ];
     }
@@ -35,8 +35,9 @@ class FunctionExtension extends AbstractExtension
 
     /**
      * To call aliases in your views eg: alias('route.alias')
+     * @throws \Exception Route with alias not found
      */
-    public function alias($var, $param=null)
+    public function alias($var, $param=null): string
     {
         return alias($var, $param);
     }
