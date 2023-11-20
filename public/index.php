@@ -26,7 +26,7 @@ session_start();
  * Initialize application URL
  */
 require_once dirname(__DIR__) . '/vendor/autoload.php';
-use function Simple\url_init;
+
 $url = url_init();
 
 /**
@@ -49,4 +49,5 @@ if(ERROR_HANDLER === 'simply') {
  * Application routes
  */
 require '../app/Routes.php';
+
 Simple\Routing\Router::dispatch($url);
