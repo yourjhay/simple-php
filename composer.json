@@ -14,7 +14,8 @@
     ],
     "require": {
         "simplyphp/framework": "v2.0.*",
-        "php": "^7.4|^8.0"
+        "php": "^7.4|^8.0",
+        "vlucas/phpdotenv": "^5.4"
     },
     "autoload": {
         "psr-4": {

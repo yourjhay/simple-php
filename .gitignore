@@ -5,3 +5,4 @@ Simply/
 .idea/
 node_modules/
 composer.lock
+.env
