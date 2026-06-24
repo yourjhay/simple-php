@@ -14,7 +14,7 @@
     ],
     "require": {
         "simplyphp/framework": "^3.0",
-        "php": "^7.4|^8.0",
+        "php": "^8.0",
         "vlucas/phpdotenv": "^5.4"
     },
     "autoload": {
