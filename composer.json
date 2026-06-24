@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "simplyphp/framework": "dev-main",
+        "simplyphp/framework": "dev-master",
         "php": "^7.4|^8.0",
         "vlucas/phpdotenv": "^5.4"
     },
