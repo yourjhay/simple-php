@@ -14,8 +14,8 @@ class HomeController extends Controller
          * return view('view.name',[var1=>'value1'],'normal')
          */
         return view('home.index',[
-            'name'        => APP_NAME,
-            'description' => APP_DESCRIPTION,
+            'name'        => config('app.name', 'Simply PHP'),
+            'description' => config('app.description', ''),
             'version' => phpversion()
         ]);
     }
