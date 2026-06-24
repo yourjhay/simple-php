@@ -3,7 +3,7 @@
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 $app = new \Simple\Application();
-$app->boot();
+$app->boot(dirname(__DIR__) . '/app/Config');
 
 $url = \Simple\url_init();
 
