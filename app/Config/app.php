@@ -5,4 +5,5 @@ return [
     'description' => env('APP_DESCRIPTION', 'The "Simply-PHP" Framework'),
     'baseurl'     => env('BASEURL', ''),
     'key'         => env('APP_KEY', ''),
+    'timezone'    => env('APP_TIMEZONE', 'UTC'),
 ];
