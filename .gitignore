@@ -1,5 +1,8 @@
-Cache/
-Logs/
+storage/logs/*.log
+storage/framework/cache/*
+!storage/framework/cache/.gitkeep
+storage/framework/sessions/*
+!storage/framework/sessions/.gitkeep
 vendor/
 Simply/
 .idea/
