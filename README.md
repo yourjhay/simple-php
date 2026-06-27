@@ -19,7 +19,7 @@ The Simple PHP is a lightweight web application micro framework.
 - Error handling and logging (Whoops for dev, clean error pages for production)
 - Controller action suffix for auth middleware (`before`/`after` hooks)
 - Encryption library (defuse/php-encryption)
-- Route caching and resource routes
+- Resource routes
 - PSR-4 autoloading with namespaces
 
 ## FULL DOCUMENTATION
