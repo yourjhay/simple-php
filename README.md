@@ -18,7 +18,6 @@ The Simple PHP is a lightweight web application micro framework.
 - Environment Configuration (.env)
 - Error handling and logging (Whoops for dev, clean error pages for production)
 - Controller action suffix for auth middleware (`before`/`after` hooks)
-- File Upload handling
 - Encryption library (defuse/php-encryption)
 - Route caching and resource routes
 - PSR-4 autoloading with namespaces
@@ -126,23 +125,6 @@ $result = Validate::is_valid($_POST, [
 
 Read the full validation documentation at:
 https://simply.rjhon.net/documentation/v1/lib/validation
-
-# File Upload
-```php
-public function store(Request $request)
-{
-    $file = $request->file('profile_photo');
-    $file->upload('folder_name');
-}
-```
-
-**Available Methods:**
-- `getFileName()` — original filename
-- `getUploadedFileName()` — filename after upload
-- `getFileSize()` — file size
-- `getFileExtension()` — file extension
-- `getFileType()` — MIME type
-- `upload($path)` — upload to specified path
 
 # Encryption
 Simply offers encryption using defuse/php-encryption.
