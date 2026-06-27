@@ -18,7 +18,7 @@ The Simple PHP is lightweight web application micro framework.
 - Easily manage dependency using composer
 
 ## FULL DOCUMENTATION
-https://simply-docs.herokuapp.com
+https://simply.rjhon.net
 
 
 # Simple PHP dependencies
@@ -109,7 +109,7 @@ If the user is authenticated the user variable is not null.:
 - {{ user.id }} display ID of current logged in user.
 
 # Validation
-Read documentation at https://simply-docs.herokuapp.com/documentation/v1/lib/validation
+Read documentation at https://simply.rjhon.net/documentation/v1/lib/validation
 
 
 # File Upload (on development)

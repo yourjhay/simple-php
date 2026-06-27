@@ -1,7 +1,7 @@
 <?php
 /**
  * Application Routes
- * docs: https://simply-docs.herokuapp.com/documentation/v1/routing
+ * docs: https://simply.rjhon.net/documentation/v1/routing
  */
 use Simple\Routing\Router;
 
